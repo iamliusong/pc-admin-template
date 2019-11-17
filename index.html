@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Font-Resource-Manage</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="stylesheet" href="./style/main.css">
+		<link rel="shortcut icon" href="./images/favicon.ico" />
+		<link rel="bookmark" href="./images/favicon.ico" />
+		<link id="skins" rel="stylesheet" href="./style/skin1.css">
+	</head>
+
+	<body>
+		<div id="all">
+			<!--左边菜单栏-->
+			<div class="left ls-content-bg" id="left-menu" ls-event="ls-hideBarTips">
+				<!--logo部分-->
+				<div class="logo ls-logo-bg">
+					前端资料管理
+					<div id="head-logo">
+						<img src="./images/headpic.jpg">
+					</div>
+
+				</div>
+				<!--左边菜单跟踪条-->
+				<div class="barTips" id="barTips"></div>
+				<!--左边菜单部分-->
+				<ul class="ls-content">
+					<li>
+						<!--
+							约定规则：
+							1、ls-for属性值对应下面dl标签的id属性，这两个值无比一一对应，方能起到在点击菜单标题的时候，打开子级菜单
+							2、span标签的id属性值必须是ls-for的属性值加“-more”
+							3、ls-href属性值对应该菜单对应html文件的url
+							4、ls-event是一个事件名称标记，传递到事件路由后进行分发
+							5、ls-item-name属性值就是创建的选项卡所显示的文字
+                        -->
+						<div ls-for="ls-homepage" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="Vue入门到精通">&#xe737;</i>
+							<span class="ls-menu">Vue入门到精通</span>
+							<span class="ls-menu-moreup" id="ls-homepage-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-homepage">
+							<dd class="ls-menu-hover" ls-href="./html/vue/day1.html" ls-event="ls-side-item" ls-item-name="Vue学习总结">Vue学习总结</dd>
+							<dd class="ls-menu-title">
+								<div ls-for="ls-home-sec" class="ls-main-menu" ls-event="ls-main-menu">
+									<span class="ls-menu">Vue基础篇</span>
+									<span class="ls-menu-moreup" id="ls-home-sec-more"></span>
+								</div>
+								<dl class="ls-sec-menu" id="ls-home-sec">
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/vue/day1.html" ls-event="ls-side-item" ls-item-name="Vue第一天">第一天学习</dd>
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/vue/day2.html" ls-event="ls-side-item" ls-item-name="Vue第二天">第二天学习</dd>
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/vue/day3.html" ls-event="ls-side-item" ls-item-name="Vue第三天">第三天学习</dd>
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/vue/day4.html" ls-event="ls-side-item" ls-item-name="Vue第四天">第四天学习</dd>
+								</dl>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-react" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="React入门到精通">&#xe64b;</i>
+							<span class="ls-menu">React入门到精通</span>
+							<span class="ls-menu-moreup" id="ls-react-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-react">
+							<dd class="ls-menu-hover" ls-href="./html/react/day1.html" ls-event="ls-side-item" ls-item-name="HTML5">React学习总结</dd>
+							<dd class="ls-menu-title">
+								<div ls-for="ls-react-resource" class="ls-main-menu" ls-event="ls-main-menu">
+									<span class="ls-menu">React基础篇</span>
+									<span class="ls-menu-moreup" id="ls-react-resource-more"></span>
+								</div>
+								<dl class="ls-sec-menu" id="ls-react-resource">
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/react/day1.html" ls-event="ls-side-item" ls-item-name="React第一天">第一天学习</dd>
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/react/day2.html" ls-event="ls-side-item" ls-item-name="Reac第二天">第二天学习</dd>
+									<dd class="ls-menu-hover ls-third-menu" ls-href="./html/react/day3.html" ls-event="ls-side-item" ls-item-name="Reac第三天">第三天学习</dd>
+								</dl>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-page" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="HTML5+CSS3">&#xe619;</i>
+							<span class="ls-menu">HTML5+CSS3</span>
+							<span class="ls-menu-moreup" id="ls-page-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-page">
+							<dd class="ls-menu-hover" ls-href="./html/h5css3/常用页面布局.html" ls-event="ls-side-item" ls-item-name="常用页面布局">常用页面布局</dd>
+							<dd class="ls-menu-hover" ls-href="./html/h5css3/html学习笔记.html" ls-event="ls-side-item" ls-item-name="html学习笔记">html学习笔记</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-app" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="JavaScript高级篇">&#xe501;</i>
+							<span class="ls-menu">JavaScript高级篇</span>
+							<span class="ls-menu-moreup" id="ls-app-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-app">
+							<dd class="ls-menu-hover" ls-href="./html/javascript/常用JS方法封装.html" ls-event="ls-side-item" ls-item-name="常用JS方法封装">常用JS方法封装</dd>
+							<dd class="ls-menu-hover" ls-href="./html/javascript/常用JS工具方法.html" ls-event="ls-side-item" ls-item-name="常用JS工具方法">常用JS工具方法</dd>
+							<dd class="ls-menu-hover" ls-href="./html/javascript/字符串数组正则方法.html" ls-event="ls-side-item" ls-item-name="字符串数组正则方法">字符串数组正则方法</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-super" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="大数据可视化">&#xe61d;</i>
+							<span class="ls-menu">大数据可视化</span>
+							<span class="ls-menu-moreup" id="ls-super-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-super">
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="高级1">柱状图</dd>
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="高级2">饼图</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-user" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="用户">&#xe618;</i>
+							<span class="ls-menu">用户</span>
+							<span class="ls-menu-moreup" id="ls-user-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-user">
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="用户1">用户1</dd>
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="用户2">用户2</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-config" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="设置">&#xe530;</i>
+							<span class="ls-menu">设置</span>
+							<span class="ls-menu-moreup" id="ls-config-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-config">
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="设置1">设置1</dd>
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="设置2">设置2</dd>
+						</dl>
+					</li>
+					<li>
+						<div ls-for="ls-license" class="ls-main-menu" ls-event="ls-main-menu">
+							<i class="ls-icon" title="授权">&#xe605;</i>
+							<span class="ls-menu">授权</span>
+							<span class="ls-menu-moreup" id="ls-license-more"></span>
+						</div>
+						<dl class="ls-sec-menu" id="ls-license">
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="授权3">授权3</dd>
+							<dd class="ls-menu-hover" ls-href="no" ls-event="ls-side-item" ls-item-name="授权4">授权4</dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+			<!--页面内容整体部分-->
+			<div id="container">
+				<div id="header" class="ls-header-bg">
+					<ul class="leftTools">
+						<li title="缩小菜单" ls-event="ls-shrink-menu">&#xe63e;</li>
+						<li title="案例链接" ls-event="ls-net-connection">&#xe629;</li>
+						<li title="刷新当前选项页面" ls-event="ls-refresh">&#xe502;</li>
+						<li>
+							<input type="text" placeholder="搜索...">
+						</li>
+					</ul>
+					<ol class="rightTools">
+						<li title="消息提醒" class="ls-tools" ls-event="ls-show-msg" ls-href="./html/message/msg.html" ls-item-name="消息盒子">&#xe60e;</li>
+						<li title="换肤" class="ls-tools" ls-event="ls-show-skin">&#xe659;</li>
+						<!--便签模块-->
+						<li title="便签" class="ls-tools ls-note">
+							<span ls-event="ls-note">&#xe61a;</span>
+							<div class="noteContainer" id="noteContainer">
+								<div class="note-header">
+									<span class="note-title">便签</span>
+									<span class="note-close" ls-event="ls-note-close">&#xe6a6;</span>
+								</div>
+								<div class="note-content">
+									<textarea id="note-contents"></textarea>
+								</div>
+							</div>
+						</li>
+						<li title="全屏展示" class="ls-tools" ls-event="ls-fullscreen">&#xe6ca;</li>
+						<!--作者模块-->
+						<li class="ls-tools authorInfo">
+							<span class="author">刘松</span>
+							<span class="authorBtn"></span>
+							<ul class="authorInfoList">
+								<li ls-href="./html/author/authorinfo.html" ls-event="ls-author-info" ls-item-name="个人简历">个人简历</li>
+								<li ls-href="./html/author/desc.html" ls-event="ls-author-info" ls-item-name="2019前端技术栈">前端技术栈</li>
+								<li onclick="window.close()">退出</li>
+							</ul>
+						</li>
+						<!--版权模块-->
+						<li title="其他信息" class="ls-tools" ls-event="ls-showcopyright">&#xe72d;</li>
+					</ol>
+				</div>
+				<!--右边选项卡及iframe页面容器-->
+				<div class="item-page">
+					<!--关闭当前，其他和全部页面部分-->
+					<div class="ls-pre-button ls-prebtn" ls-event="ls-pre-button">&#xe614;</div>
+					<div class="ls-next-button ls-prebtn" ls-event="ls-next-button">&#xe61e;</div>
+					<div class="ls-close-button ls-prebtn" ls-event="ls-close-button">
+						<span>&#xe635;</span>
+						<ul class="ls-closeList">
+							<li ls-event="ls-close-current">关闭当前标签页</li>
+							<li ls-event="ls-close-others">关闭其他标签页</li>
+							<li ls-event="ls-close-all">关闭所有标签页</li>
+						</ul>
+					</div>
+					<!--选项卡部分-->
+					<div class="ls-tabbar-list" id="ls-tabbar">
+						<ul id="ls-tabbar-list">
+							<li ls-event="ls-home-click" id="ls-home" class="active-item">&#xe651;</li>
+						</ul>
+					</div>
+				</div>
+				<!--iframe页面容器-->
+				<div class="content" id="pageContainer">
+					<div class="pageContainer active-iframe" id="default-page">
+						<iframe src="./html/index/home.html" scrolling="auto" frameborder="no" allowtransparency="yes"></iframe>
+					</div>
+				</div>
+			</div>
+			<!--页面右边遮罩层-->
+			<div id="shade" ls-event="ls-shade-hidden">
+				<div id="copyRight">
+					<div class="ls-person">个人简介</div>
+					<div class="ls-head-pic">&#xe509;</div>
+					<div class="ls-speak">
+						<p>
+							爱好程序设计，喜欢开发自己的小型产品，追求技术上的满足感；<span>稳固的架构，健壮的代码，</span>团队的合作是我不懈的追求。 有良好的编程习惯，以及程序错误控制和解决能力，我爱<span>程序员</span>这个岗位，当每天敲着代码，听着音乐，是很快乐的。
+						</p>
+						<p>
+							用心工作，用心生活！我可能不是最好的，最合适的，但我觉得我是<span>最有潜力的。</span>如果你也喜欢钻研程序，我们不妨交个朋友，一起在代码的世界里探索。
+						</p>
+					</div>
+				</div>
+				<div id="ls-skins">
+					<div class="ls-skins">配色方案</div>
+					<ul>
+						<li>
+							<img src="./images/skins/bg1.png" ls-event="ls-change-skin" ls-skin-style="skin1">
+						</li>
+						<li>
+							<img src="./images/skins/bg2.png" ls-event="ls-change-skin" ls-skin-style="skin2">
+						</li>
+						<li>
+							<img src="./images/skins/bg3.png" ls-event="ls-change-skin" ls-skin-style="skin3">
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/move.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+		<script type="text/javascript">
+			//初始化js插件
+			LiuSong.init({
+				itemWidth: 150,
+				homeItemW: 40
+			});
+			//监听页面点击事件
+			document.addEventListener('click', eventDictionary, true);
+			document.addEventListener('mouseover', eventDictionary, false);
+			document.getElementById('left-menu').addEventListener('mouseleave', eventDictionary, false);
+			//事件字典，负责各类型事件的分发
+			function eventDictionary(e) {
+				var e = e || window.event;
+				switch(e.type.toLowerCase()) {
+					case 'click':
+						LiuSong.click(e.target);
+						break;
+					case 'mouseover':
+						LiuSong.mouseover(e.target);
+						break;
+					case 'mouseleave':
+						LiuSong.mouseleave(e.target);
+						break;
+				}
+			}
+		</script>
+	</body>
+
+</html>

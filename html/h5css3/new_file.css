@@ -1,0 +1,26 @@
+#href-box3 .left {
+  position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100px;
+	background-color: #CCC;
+}
+
+#href-box3 .right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 100px;
+	background-color: #EEE8D5;
+}
+
+.box {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	margin: 5px 0 10px 62px;
+	border: 1px solid #CCC;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>jQuery数字跟指针时钟一体特效</title>
+	</head>
+	<style>
+		@font-face {
+			font-family: 'iconfont';
+			src: url('../../font/iconfont.eot');
+			src: url('../../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../../font/iconfont.woff2') format('woff2'), url('../../font/iconfont.woff') format('woff'), url('../../font/iconfont.ttf') format('truetype'), url('../../font/iconfont.svg#iconfont') format('svg');
+		}
+		
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		html,
+		body {
+			width: 100%;
+			height: 100%;
+		}
+		
+		body,
+		div,
+		p {
+			font-family: 'Microsoft Yahei';
+			font-size: 14px;
+		}
+		
+		.box {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 400px;
+			height: 400px;
+			margin-left: -200px;
+			margin-top: -200px;
+			border: 10px solid #8bf2f1;
+			border-radius: 50%;
+			box-shadow: 0px 0px 20px 3px #444 inset;
+		}
+		/*原点*/
+		
+		.origin {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: #ff0000;
+			top: 190px;
+			left: 190px;
+			position: absolute;
+		}
+		/* 指针 */
+		
+		.clock_line {
+			position: absolute;
+			z-index: 20;
+		}
+		
+		.hour_line {
+			width: 100px;
+			height: 4px;
+			top: 198px;
+			left: 200px;
+			background-color: #000;
+			border-radius: 2px;
+			transform-origin: 0 50%;
+			box-shadow: 1px -3px 8px 3px #aaa;
+		}
+		
+		.minute_line {
+			width: 130px;
+			height: 2px;
+			top: 199px;
+			left: 190px;
+			background-color: #000;
+			transform-origin: 7.692% 50%;
+			box-shadow: 1px -3px 8px 1px #aaa;
+		}
+		
+		.second_line {
+			width: 170px;
+			height: 1px;
+			top: 199.5px;
+			left: 180px;
+			background-color: #f60;
+			transform-origin: 11.765% 50%;
+			box-shadow: 1px -3px 7px 1px #bbb;
+		}
+		
+		.dot_box {
+			width: inherit;
+			height: inherit;
+		}
+		/*时钟数*/
+		
+		.dot {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			font-size: 22px;
+			position: absolute;
+		}
+		
+		.clock-scale {
+			width: 195px;
+			height: 2px;
+			transform-origin: 0% 50%;
+			z-index: 7;
+			position: absolute;
+			top: 199px;
+			left: 200px;
+		}
+		
+		.scale-show {
+			width: 12px;
+			height: 2px;
+			background-color: #555;
+			float: left;
+		}
+		
+		.scale-hidden {
+			width: 183px;
+			height: 2px;
+			float: left;
+		}
+		/*日期*/
+		
+		.date_info {
+			width: 160px;
+			height: 28px;
+			line-height: 28px;
+			text-align: center;
+			position: absolute;
+			top: 230px;
+			left: 120px;
+			z-index: 11;
+			color: #555;
+			font-weight: bold;
+		}
+		
+		.time_info {
+			width: 110px;
+			height: 35px;
+			line-height: 35px;
+			text-align: center;
+			position: absolute;
+			top: 270px;
+			left: 150px;
+			z-index: 11;
+			color: #555;
+			background: #253e3e;
+		}
+		
+		.time {
+			width: 35px;
+			height: 35px;
+			float: left;
+			color: #fff;
+			font-size: 22px;
+		}
+		
+		#minute_time {
+			border-left: 1px solid #fff;
+			border-right: 1px solid #fff;
+		}
+		
+		.menu {
+			position: absolute;
+			display: none;
+			z-index: 20;
+			background: #fff;
+			box-shadow: 0px 0px 10px #ddd;
+			width: 200px;
+			left: 300px;
+			top: 100px;
+		}
+		
+		.menu ul li {
+			height: 35px;
+			line-height: 35px;
+			font-size: 14px;
+			color: #666;
+			font-family: "微软雅黑";
+			list-style-type: none;
+			border-bottom: 1px solid #ddd;
+			text-indent: 20px;
+			cursor: default;
+		}
+		
+		.menu ul li img {
+			margin-right: 10px;
+		}
+		
+		.menu ul li:hover {
+			background-color: #344058;
+			color: #fff;
+		}
+		
+		.menu .icon {
+			font-family: 'iconfont';
+			padding: 0 10px 0 0;
+		}
+	</style>
+
+	<body>
+		<div class="box" id="clock">
+			<!-- 原点 -->
+			<div class="origin"></div>
+			<!-- 时钟数 -->
+			<div class="dot_box">
+				<div class="dot">6</div>
+				<div class="dot">5</div>
+				<div class="dot">4</div>
+				<div class="dot">3</div>
+				<div class="dot">2</div>
+				<div class="dot">1</div>
+				<div class="dot">12</div>
+				<div class="dot">11</div>
+				<div class="dot">10</div>
+				<div class="dot">9</div>
+				<div class="dot">8</div>
+				<div class="dot">7</div>
+			</div>
+			<!-- 时、分、秒针 -->
+			<div class="clock_line hour_line" id="hour_line"></div>
+			<div class="clock_line minute_line" id="minute_line"></div>
+			<div class="clock_line second_line" id="second_line"></div>
+			<!-- 日期 -->
+			<div class="date_info" id="date_info"></div>
+			<!-- 时间 -->
+			<div class="time_info">
+				<div class="time" id="hour_time"></div>
+				<div class="time" id="minute_time"></div>
+				<div class="time" id="second_time"></div>
+			</div>
+		</div>
+
+		<!--右键菜单-->
+		<div class="menu">
+			<ul>
+				<li><span class="icon">&#xe609;</span>添加应用</li>
+				<li><span class="icon">&#xe683;</span>添加笔记</li>
+				<li><span class="icon">&#xe60f;</span>刷新</li>
+				<li><span class="icon">&#xe606;</span>上传资料</li>
+				<li><span class="icon">&#xe662;</span>更换背景</li>
+				<li><span class="icon">&#xe642;</span>注销</li>
+			</ul>
+			<div>
+				<script src="./jquery.min.js"></script>
+				<script>
+					$(function() {
+						var clock = document.getElementById("clock");
+
+						function initNumXY() {
+							// 1、12个数字的位置设置
+							var radius = 160; //大圆半价
+							var dot_num = 360 / $(".dot").length; //每个div对应的弧度数
+							//每一个dot对应的弧度;		πr/180*(dot_num)
+							var ahd = dot_num * Math.PI / 180; //Math.PI 即圆周率
+							$(".dot").each(function(index, el) {
+								$(this).css({
+									"left": Math.sin((ahd * index)) * radius - 20 + 200,
+									"top": 180 + Math.cos((ahd * index)) * radius
+								});
+							});
+							// 2、刻钟设置
+							for(var i = 0; i < 60; i++) {
+								clock.innerHTML += "<div class='clock-scale'> " +
+									"<div class='scale-hidden'></div>" +
+									"<div class='scale-show'></div>" +
+									"</div>";
+							}
+							var scale = document.getElementsByClassName("clock-scale");
+							for(var i = 0; i < scale.length; i++) {
+								scale[i].style.transform = "rotate(" + (i * 6 - 90) + "deg)";
+							}
+						}
+						initNumXY(); //调用上面的函数
+						//获取时钟id
+						var hour_line = document.getElementById("hour_line"),
+							minute_line = document.getElementById("minute_line"),
+							second_line = document.getElementById("second_line"),
+							date_info = document.getElementById("date_info"), //获取date_info
+							hour_time = document.getElementById("hour_time"), // 获去时间id
+							minute_time = document.getElementById("minute_time"),
+							second_time = document.getElementById("second_time");
+						//3、设置动态时间
+						function setTime() {
+							var nowdate = new Date();
+							//获取年月日时分秒
+							var year = nowdate.getFullYear(),
+								month = nowdate.getMonth() + 1,
+								day = nowdate.getDay(),
+								d = nowdate.getDate(),
+								hours = nowdate.getHours(),
+								minutes = nowdate.getMinutes(),
+								seconds = nowdate.getSeconds(),
+								date = nowdate.getDate();
+							var weekday = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+							// 获取日期id
+							date_info.innerHTML = year + "年" + month + "月" + d + "日   " + weekday[day];
+							hour_time.innerHTML = hours >= 10 ? hours : "0" + hours;
+							minute_time.innerHTML = minutes >= 10 ? minutes : "0" + minutes;
+							second_time.innerHTML = seconds >= 10 ? seconds : "0" + seconds;
+							//时分秒针设置 12：45    （45/60）*360    30*hours  minute*6
+							var hour_rotate = (hours * 30 - 90) + (Math.floor(minutes / 12) * 6);
+							hour_line.style.transform = 'rotate(' + hour_rotate + 'deg)';
+							minute_line.style.transform = 'rotate(' + (minutes * 6 - 90) + 'deg)';
+							second_line.style.transform = 'rotate(' + (seconds * 6 - 90) + 'deg)';
+						}
+						// setTime();
+						setInterval(setTime, 1000);
+					});
+
+					//要禁掉桌面系统本身的右键弹出功能
+					document.oncontextmenu = function() {
+						return false;
+					};
+					$(document).mousedown(function(e) {
+						var key = e.which; //获取鼠标按下的状态 左键 1  右键 3
+						if(key == 3) {
+							var x = e.clientX;
+							var y = e.clientY;
+							var windowHeight = getClientHeight();
+							var windowWidth = getClientWidth();
+							var menuHeight = $(".menu").height();
+							var menuWidth = $(".menu").width();
+							if((y + menuHeight) > windowHeight) y = windowHeight - menuHeight;
+							if((x + menuWidth) > windowWidth) x = windowWidth - menuWidth;
+							$(".menu").show().css({
+								left: x,
+								top: y
+							});
+						}
+					});
+
+					$(".menu ul li").click(function() {
+//						var _index = $(this).index();
+//						if(_index == 1) {
+//							alert("添加应用");
+//						} else if(_index == 2) {
+//							alert("获取课程");
+//						}
+						alert('该功能暂未实现！');
+					});
+
+					/**
+					 * 获取窗体可见度高度
+					 */
+					function getClientHeight() {
+						var clientHeight = 0;
+						if(document.body.clientHeight && document.documentElement.clientHeight) {
+							clientHeight = (document.body.clientHeight < document.documentElement.clientHeight) ? document.body.clientHeight :
+								document.documentElement.clientHeight;
+						} else {
+							clientHeight = (document.body.clientHeight > document.documentElement.clientHeight) ? document.body.clientHeight :
+								document.documentElement.clientHeight;
+						}
+						return clientHeight;
+					}
+
+					/**
+					 * 获取窗体可见度宽度
+					 */
+					function getClientWidth() {
+						var clientWidth = 0;
+						if(document.body.clientWidth && document.documentElement.clientWidth) {
+							clientWidth = (document.body.clientWidth < document.documentElement.clientWidth) ? document.body.clientWidth :
+								document.documentElement.clientWidth;
+						} else {
+							clientWidth = (document.body.clientWidth > document.documentElement.clientWidth) ? document.body.clientWidth :
+								document.documentElement.clientWidth;
+						}
+						return clientWidth;
+					}
+
+					$(document).click(function() {
+						$(".menu").hide();
+					});
+				</script>
+	</body>
+
+</html>

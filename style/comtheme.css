@@ -1,0 +1,155 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: 'iconfont';
+	src: url('../font/iconfont.eot');
+	src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff2') format('woff2'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+#all {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.fix {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 30px;
+	height: 30px;
+	font-size: 15px;
+	line-height: 30px;
+	background-color: #aaa;
+	font-family: 'iconfont';
+	text-align: center;
+	border-radius: 2px;
+}
+
+.fix a:link,
+.fix a:visited,
+.fix a:hover,
+.fix a:active {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#head {
+	height: 40px;
+	background-color: #F6F6F6;
+	font-size: 15px;
+	font-family: 'Microsoft YaHei';
+}
+
+#head>ol {
+	width: 95%;
+	margin: auto;
+}
+
+#head>ol>li {
+	position: relative;
+	list-style: none;
+	display: inline-block;
+	line-height: 40px;
+	height: 40px;
+}
+
+#head>ol>li>span {
+	display: inline-block;
+	padding: 0 15px;
+	cursor: default;
+}
+
+#head>ol>li:hover {
+	background-color: #1E9FFF;
+	color: #FFF;
+}
+
+#head>ol>li:hover .sec-menu {
+	display: block;
+}
+
+#head .sec-menu {
+	position: absolute;
+	display: none;
+	z-index: 10;
+	left: 0;
+	top: 40px;
+	text-align: left;
+	text-indent: 20px;
+	list-style: none;
+	width: 220px;
+	background-color: #F6F6F6;
+	border: 1px solid #CCC;
+	border-radius: 3px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+#head .sec-menu li {
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#head a:link {
+	color: #000;
+	text-decoration: none;
+}
+
+#head a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+#head a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#head a:active {
+	color: #000;
+	text-decoration: none;
+}
+
+#head .sec-menu li:hover {
+	background-color: #1E9FFF;
+	cursor: pointer;
+}
+
+h1 {
+	font-size: 16px;
+	text-indent: 2em;
+	height: 30px;
+	line-height: 30px;
+	color: #000;
+	font-family: 'Microsoft YaHei';
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 15px;
+	font-weight: normal;
+	text-indent: 4em;
+	height: 35px;
+	line-height: 35px;
+	color: #000;
+	font-family: 'Microsoft YaHei';
+}
+
+pre {
+	overflow-x: hidden;
+}
+
+.red {
+	color: red;
+}
+
+.desc {
+	margin: 0 30px;
+	text-indent: 2em;
+	color: blue;
+	font-family: 'Microsoft YaHei';
+	font-size:15px;
+}

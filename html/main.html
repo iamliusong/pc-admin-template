@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="../images/logo.ico" />
+		<title>Canvas仪表盘示例</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			html,
+			body,
+			#wrap {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			
+			.chart {
+				float: left;
+				text-align: center;
+				width: 50%;
+				height: 50%;
+				background: #0d2950;
+			}
+			
+			#fullBtn {
+				position: absolute;
+				right: 10px;
+				top: 20px;
+				width: 100px;
+				height: 40px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 20px;
+				font-family: "microsoft yahei";
+				color: #FFFFFF;
+				cursor: default;
+				background: rgba(255, 255, 255, .5);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="chart" class="chart"></div>
+			<div id="chart1" class="chart"></div>
+			<div id="chart2" class="chart"></div>
+			<div id="chart3" class="chart"></div>
+			<div id="fullBtn">全屏展示</div>
+		</div>
+		<script type="text/javascript">
+			//声明仪表盘类
+			function Chart(mJson) {
+				//真实数据值
+				this.data = mJson.data;
+				//表盘刻度值
+				this.scaleData = [0, 20, 40, 60, 80, 100];
+				//表盘外围线圈弧度
+				this.scaleSize = Math.PI * 5 / 3;
+				//指针动画持续时间
+				this.animationTime = 1000;
+				//仪表盘动画定时器
+				this.Timer = '';
+				//表盘底部文字描述
+				this.desc = mJson.desc;
+				//canvas绘图环境
+				this.container = document.getElementById(mJson.container);
+				this.canvas = document.createElement('canvas');
+				this.ctx = this.canvas.getContext('2d');
+				this.container.appendChild(this.canvas);
+				//表盘指针开始位置和结束位置
+				this.startAngle = -this.scaleSize / 2;
+				this.endAngle = this.startAngle;
+				//浏览器窗口大小变化进行重绘
+				this.resizeChart();
+			}
+
+			//重置canvas画布环境
+			Chart.prototype.resizeChart = function() {
+				clearInterval(this.Timer);
+				var containerW = this.container.offsetWidth;
+				var containerH = this.container.offsetHeight;
+				this.canvaSize = containerW > containerH ? containerH : containerW;
+				this.canvas.width = this.canvaSize;
+				this.canvas.height = this.canvaSize;
+				this.linearColor = this.ctx.createLinearGradient(0, 0, this.canvaSize, this.canvaSize);
+				this.linearColor.addColorStop(0, '#2ec978');
+				this.linearColor.addColorStop(1, '#349bd5');
+				this.drawChart();
+			}
+
+			//绘制仪表盘，方法调用
+			Chart.prototype.drawChart = function() {
+				var time = new Date();
+				this.translateDeg();
+				this.Timer = setInterval(function() {
+					this.ctx.clearRect(0, 0, this.canvaSize, this.canvaSize);
+					this.drawScale();
+					this.drawCircle(this.canvaSize * 0.035, '#CCCCCC');
+					this.drawCircle(this.canvaSize * 0.025, '#1e6e9a');
+					this.drawCircle(this.canvaSize * 0.015, '#ad35d9');
+					this.drawDesc();
+					this.pointerAnimation(time);
+				}.bind(this), 1000 / 60);
+			}
+
+			//计算数据占比
+			Chart.prototype.translateDeg = function() {
+				var max = 0;
+				this.scaleData.forEach(function(item, i) {
+					if(item > max)
+						max = item;
+				});
+				this.endAngle = this.startAngle + this.data / max * this.scaleSize;
+			}
+			//绘制表盘刻度和文字
+			Chart.prototype.drawScale = function() {
+				//绘制外围线圈
+				var ctx = this.ctx,
+					centerDot = this.canvaSize / 2,
+					pi = Math.PI;
+				ctx.beginPath();
+				var gapDeg = (pi * 2 - this.scaleSize) / 2,
+					start = pi / 2 + gapDeg,
+					end = pi / 2 - gapDeg;
+				ctx.arc(centerDot, centerDot, this.canvaSize * 0.42, start - 0.05, end + 0.05, false);
+				ctx.strokeStyle = this.linearColor;
+				ctx.lineWidth = 0.035 * this.canvaSize;
+				ctx.stroke();
+				//绘制大刻度
+				var startPos = -(this.scaleSize / 2);
+				for(var i = 0; i < 6; i++) {
+					ctx.save();
+					ctx.translate(centerDot, centerDot);
+					ctx.rotate(startPos + this.scaleSize / 5 * i);
+					ctx.beginPath();
+					ctx.moveTo(0, -this.canvaSize * 0.38);
+					ctx.lineTo(0, -this.canvaSize * 0.35);
+					ctx.strokeStyle = '#FFF';
+					ctx.lineWidth = 0.012 * this.canvaSize;
+					ctx.stroke();
+					ctx.restore();
+				}
+				//绘制中刻度
+				for(var i = 0; i < 11; i++) {
+					ctx.save();
+					ctx.translate(centerDot, centerDot);
+					ctx.rotate(startPos + this.scaleSize / 10 * i);
+					ctx.beginPath();
+					ctx.moveTo(0, -this.canvaSize * 0.38);
+					ctx.lineTo(0, -this.canvaSize * 0.36);
+					ctx.strokeStyle = '#FFF';
+					ctx.lineWidth = 0.01 * this.canvaSize;
+					ctx.stroke();
+					ctx.restore();
+				}
+				//绘制小刻度
+				for(var i = 0; i < 51; i++) {
+					ctx.save();
+					ctx.translate(centerDot, centerDot);
+					ctx.rotate(startPos + this.scaleSize / 50 * i);
+					ctx.beginPath();
+					ctx.moveTo(0, -this.canvaSize * 0.38);
+					ctx.lineTo(0, -this.canvaSize * 0.37);
+					ctx.strokeStyle = '#FFF';
+					ctx.lineWidth = 0.006 * this.canvaSize;;
+					ctx.stroke();
+					ctx.restore();
+				}
+				//绘制大刻度旁文字
+				for(var i = 0; i < 6; i++) {
+					ctx.save();
+					ctx.translate(centerDot, centerDot);
+					var deg = pi / 2 + (pi * 2 - this.scaleSize) / 2 + this.scaleSize / 5 * i;
+					var x = this.canvaSize * 0.3 * Math.cos(deg),
+						y = this.canvaSize * 0.3 * Math.sin(deg);
+					ctx.beginPath();
+					ctx.font = '18px Microsoft YaHei';
+					ctx.textAlign = 'center';
+					ctx.textBaseline = 'middle';
+					ctx.fillStyle = '#FFF';
+					ctx.fillText(this.scaleData[i], x, y);
+					ctx.restore();
+				}
+			}
+
+			//绘制表盘中心圆圈
+			Chart.prototype.drawCircle = function(radius, color) {
+				var ctx = this.ctx,
+					centerDot = this.canvaSize / 2;
+				ctx.save();
+				ctx.beginPath();
+				ctx.translate(centerDot, centerDot);
+				ctx.arc(0, 0, radius, 0, Math.PI * 2);
+				ctx.fillStyle = color;
+				ctx.fill();
+				ctx.restore();
+			}
+
+			//绘制说明文字
+			Chart.prototype.drawDesc = function() {
+				var ctx = this.ctx,
+					centerDot = this.canvaSize / 2,
+					fontSize = Math.floor(0.7*centerDot)/7;
+				ctx.save();
+				ctx.beginPath();
+				ctx.translate(centerDot, centerDot);
+				ctx.font = 'bold '+fontSize+'px Microsoft YaHei';
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'middle';
+				ctx.fillStyle = '#ad35d9';
+				this.drawText(this.desc, 0, 0.75 * centerDot,0.6*centerDot);
+				ctx.restore();
+			}
+
+			//指针运动动画
+			Chart.prototype.pointerAnimation = function(time) {
+				var ctx = this.ctx,
+					centerDot = this.canvaSize / 2;
+				var nowTime = new Date();
+				var prop = (nowTime - time) / this.animationTime;
+				if(prop >= 1) {
+					prop = 1;
+					clearInterval(this.Timer);
+				}
+				var nowAngle = prop * (this.endAngle - this.startAngle) + this.startAngle
+				ctx.save();
+				ctx.translate(centerDot, centerDot);
+				ctx.rotate(nowAngle);
+				ctx.beginPath();
+				ctx.moveTo(-this.canvaSize * 0.015, 0);
+				ctx.lineTo(this.canvaSize * 0.015, 0);
+				ctx.lineTo(0, -0.35 * this.canvaSize);
+				ctx.closePath();
+				ctx.fillStyle = '#ad35d9';
+				ctx.fill();
+				ctx.restore();
+			}
+			
+			//canvas绘制的文字换行
+			Chart.prototype.drawText=function(t,x,y,w){
+				var ctx=this.ctx;
+			    var chr = t.split("");
+			    var temp = "";              
+			    var row = [];
+			    chr.forEach(function(item,i){
+			    	if(ctx.measureText(temp).width >= w )
+			        {
+			            row.push(temp);
+			            temp = "";
+			        }
+			        temp += chr[i];
+			    });		
+			    row.push(temp);	
+			    row.forEach(function(item,i){
+			    	ctx.fillText(row[i],x,y+(i)*w/5);
+			    });
+			}
+
+			var sCaleChart = new Chart({
+				container: 'chart',
+				data: 50,
+				desc: 'D5000检测'
+			});
+
+			var sCaleChart1 = new Chart({
+				container: 'chart1',
+				data: 60,
+				desc: '停上电时间'
+			});
+
+			var sCaleChart2 = new Chart({
+				container: 'chart2',
+				data: 90,
+				desc: '日负荷检测'
+			});
+
+			var sCaleChart3 = new Chart({
+				container: 'chart3',
+				data: 100,
+				desc: '配电自动检测配电自动'
+			});
+
+			window.onresize = function() {
+				sCaleChart.resizeChart();
+				sCaleChart1.resizeChart();
+				sCaleChart2.resizeChart();
+				sCaleChart3.resizeChart();
+			}
+			
+			//页面其它相关点击事件
+			var wrap = document.getElementById('wrap');
+			var flag = false;
+			document.addEventListener('click', function(e) {
+				if(e.target.id === 'fullBtn') {
+					if(flag) {
+						eixtFullScreen();
+						e.target.innerHTML = '全屏展示';
+						flag = !flag;
+					} else {
+						requestFullScreen(wrap);
+						e.target.innerHTML = '退出全屏';
+						flag = !flag;
+					}
+				}
+			});
+
+			//浏览器全屏展示
+			function requestFullScreen(element) {
+				//兼容性设置
+				var requestMethod = element.requestFullscreen ||
+					element.webkitRequestFullScreen ||
+					element.mozRequestFullScreen ||
+					element.msRequestFullscreen;
+				if(requestMethod) {
+					requestMethod.call(element);
+				}
+				//判断是否支持ActiveX控件
+				else if(typeof window.ActiveXObject != 'undefined') {
+					//这里其实就是模拟了按下键盘的F11，使浏览器全屏
+					var wscript = new ActiveXObject('WScript.Shell');
+					if(wscript != null) {
+						wscript.SendKeys('{F11}');
+					}
+				}
+			}
+
+			//退出全屏展示
+			function eixtFullScreen() {
+				var exitMethod = document.exitFullscreen ||
+					document.mozCancelFullScreen ||
+					document.webkitExitFullscreen ||
+					document.webkitCancelFullScreen ||
+					document.msExitFullscreen;
+				if(exitMethod) {
+					exitMethod.call(document);
+				} else if(typeof window.ActiveXObject != 'undefined') {
+					//这里其实就是模拟了按下键盘的F11，使浏览器全屏
+					var wscript = new ActiveXObject('WScript.Shell');
+					if(wscript != null) {
+						wscript.SendKeys('{F11}');
+					}
+				}
+			}
+
+			//定时刷新
+			var charTimer = setInterval(function() {
+				sCaleChart.data = 10;
+				sCaleChart.drawChart();
+				sCaleChart1.data = 30;
+				sCaleChart1.drawChart();
+				sCaleChart2.data = 60;
+				sCaleChart2.drawChart();
+				sCaleChart3.data = 90;
+				sCaleChart3.drawChart();
+			}, 10000);
+		</script>
+	</body>
+
+</html>

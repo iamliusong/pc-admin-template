@@ -1,0 +1,93 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'iconfont';
+	src: url('../font/iconfont.eot');
+	src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff2') format('woff2'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+html,body{
+	width:100%;
+	height:100%;
+}
+.header-box{
+	width:100%;
+	height:50px;
+	line-height: 50px;
+	font-size:16px;
+	text-align:center;
+	background-color:#eee;
+}
+
+.register-box{
+	margin:10px auto 20px;
+}
+.register-form{
+	width:96%;
+	margin:0 auto;
+}
+.register-input-box{
+	position: relative;
+	padding:12px 0 8px 0;
+	border-bottom: 1px solid #09c161;
+	font-size:16px;
+	line-height: 26px;
+}
+.register-input-box label{
+	font-family: 'iconfont';
+	padding:10px;
+}
+.register-input-box input{
+	padding:10px 0;
+	font-size:16px;
+	border:none;
+	outline:none;
+}
+.register-input-box .register-input{
+	width:70%;
+}
+.register-important{
+	padding:10px 0 10px 10px;
+	color:red;
+}
+.register-lose-pass{
+	position:absolute;
+	top:17px;
+	right:0;
+	color:#CCC;
+}
+.register-tools{
+	height:20px;
+	margin-top:10px;
+}
+.register-btn{
+	height:50px;
+	line-height: 50px;
+	border-radius: 6px;
+	text-align:center;
+	background-color:#09c161;
+	color:#FFF;
+}
+.other-login{
+	display: flex;
+	height:50px;
+	margin-bottom:20px;
+	align-items:center;
+	justify-content: space-between;
+}
+.other-login p{
+	line-height: 50px;
+	padding:0 16px;
+	font-size:16px;
+}
+.footer-box{
+	width:100%;
+	line-height: 24px;
+	font-size:16px;
+	color:#4d586a;
+	text-align:center;
+}
+

@@ -1,0 +1,58 @@
+/*头部背景样式*/
+
+.ls-header-bg {
+	background-color: #2F9688;
+	color: #FFF;
+}
+
+
+/*logo部分背景样式*/
+
+#left-menu .ls-logo-bg {
+	background-color: #226a62;
+	color: rgba(255, 255, 255, .8);
+}
+
+
+/*左边菜单鼠标悬浮样式*/
+
+#left-menu .ls-content>li dl .ls-menu-hover:hover{
+	background: #2F9688;
+	color: #FFF;
+}
+
+
+/*左边菜单背景样式*/
+
+.ls-content-bg {
+	background-color: #666699;
+	color: #FFF;
+}
+
+
+/*激活菜单样式*/
+
+#left-menu .ls-content>li dl .active-menu {
+	background-color: #226a62;
+	color: #FFF;
+}
+
+
+/*激活iframe样式*/
+
+#container .content .active-iframe {
+	z-index: 2;
+	animation: play 1s ease 1;
+}
+
+@keyframes play{
+	from{left:100%}
+	to{left:0}
+}
+
+/*激活选项卡样式*/
+
+#container .item-page .ls-tabbar-list .active-item {
+	background-color: #666699;
+	color:#FFF;
+}

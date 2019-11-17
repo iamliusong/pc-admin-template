@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:等线;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:DengXian;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 953122042 22 0 262159 0;}
+@font-face
+	{font-family:"等线 Light";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 953122042 22 0 262159 0;}
+@font-face
+	{font-family:微软雅黑;
+	panose-1:2 11 5 3 2 2 4 2 2 4;
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 718224464 22 0 262175 0;}
+@font-face
+	{font-family:"\@等线";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 953122042 22 0 262159 0;}
+@font-face
+	{font-family:"\@微软雅黑";
+	mso-font-charset:134;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147483001 718224464 22 0 262175 0;}
+@font-face
+	{font-family:"\@等线 Light";
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:-1610612033 953122042 22 0 262159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:20.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:等线;
+	mso-ascii-font-family:等线;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:等线;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:等线;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+h1
+	{mso-style-update:auto;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 1 字符";
+	mso-style-next:正文;
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	text-align:center;
+	line-height:240%;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:16.0pt;
+	mso-bidi-font-size:22.0pt;
+	font-family:等线;
+	mso-ascii-font-family:等线;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:微软雅黑;
+	mso-hansi-font-family:等线;
+	mso-hansi-theme-font:minor-latin;
+	color:red;
+	mso-font-kerning:22.0pt;
+	font-weight:normal;
+	mso-bidi-font-weight:bold;}
+h2
+	{mso-style-update:auto;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"标题 2 字符";
+	mso-style-next:正文;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	line-height:24.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"等线 Light";
+	mso-ascii-font-family:"等线 Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"等线 Light";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"等线 Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#0070C0;
+	mso-font-kerning:1.0pt;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-priority:99;
+	mso-style-link:"页眉 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:12.0pt;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	border:none;
+	mso-border-bottom-alt:solid windowtext .75pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 1.0pt 0cm;
+	font-size:9.0pt;
+	font-family:等线;
+	mso-ascii-font-family:等线;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:等线;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:等线;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-priority:99;
+	mso-style-link:"页脚 字符";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	line-height:12.0pt;
+	mso-pagination:none;
+	tab-stops:center 207.65pt right 415.3pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:等线;
+	mso-ascii-font-family:等线;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:等线;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:等线;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:21.0pt;
+	mso-char-indent-count:2.0;
+	line-height:20.0pt;
+	mso-line-height-rule:exactly;
+	mso-pagination:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:等线;
+	mso-ascii-font-family:等线;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:等线;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:等线;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
+	mso-font-kerning:1.0pt;}
+span.1
+	{mso-style-name:"标题 1 字符";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 1";
+	mso-ansi-font-size:16.0pt;
+	mso-bidi-font-size:22.0pt;
+	font-family:"微软雅黑",sans-serif;
+	mso-fareast-font-family:微软雅黑;
+	color:red;
+	mso-font-kerning:22.0pt;
+	mso-bidi-font-weight:bold;}
+span.2
+	{mso-style-name:"标题 2 字符";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"标题 2";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:"等线 Light";
+	mso-ascii-font-family:"等线 Light";
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"等线 Light";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:"等线 Light";
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
+	color:#0070C0;
+	font-weight:bold;}
+span.a
+	{mso-style-name:"页眉 字符";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页眉;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+span.a0
+	{mso-style-name:"页脚 字符";
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:页脚;
+	mso-ansi-font-size:9.0pt;
+	mso-bidi-font-size:9.0pt;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:等线;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;
+	mso-footnote-separator:url("html知识点.files/header.htm") fs;
+	mso-footnote-continuation-separator:url("html知识点.files/header.htm") fcs;
+	mso-endnote-separator:url("html知识点.files/header.htm") es;
+	mso-endnote-continuation-separator:url("html知识点.files/header.htm") ecs;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:531772432;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1167923196 -1518683004 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:%1、;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-36.0pt;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%2\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%5\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:105.0pt;
+	text-indent:-21.0pt;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:126.0pt;
+	text-indent:-21.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:147.0pt;
+	text-indent:-21.0pt;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%8\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:168.0pt;
+	text-indent:-21.0pt;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:189.0pt;
+	text-indent:-21.0pt;}
+@list l1
+	{mso-list-id:680938135;
+	mso-list-type:hybrid;
+	mso-list-template-ids:75947352 -1400184792 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-text:%1、;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-36.0pt;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%2\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;}
+@list l1:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%5\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:105.0pt;
+	text-indent:-21.0pt;}
+@list l1:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:126.0pt;
+	text-indent:-21.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:147.0pt;
+	text-indent:-21.0pt;}
+@list l1:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%8\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:168.0pt;
+	text-indent:-21.0pt;}
+@list l1:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:189.0pt;
+	text-indent:-21.0pt;}
+@list l2
+	{mso-list-id:1417630556;
+	mso-list-type:hybrid;
+	mso-list-template-ids:1601235434 -710088434 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l2:level1
+	{mso-level-text:%1、;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-36.0pt;}
+@list l2:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%2\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:42.0pt;
+	text-indent:-21.0pt;}
+@list l2:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:63.0pt;
+	text-indent:-21.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:84.0pt;
+	text-indent:-21.0pt;}
+@list l2:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%5\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:105.0pt;
+	text-indent:-21.0pt;}
+@list l2:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:126.0pt;
+	text-indent:-21.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:147.0pt;
+	text-indent:-21.0pt;}
+@list l2:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-text:"%8\)";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	margin-left:168.0pt;
+	text-indent:-21.0pt;}
+@list l2:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	margin-left:189.0pt;
+	text-indent:-21.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:普通表格;
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.5pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:等线;
+	mso-ascii-font-family:等线;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:等线;
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:等线;
+	mso-hansi-theme-font:minor-latin;
+	mso-font-kerning:1.0pt;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2049"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<h1><span lang=EN-US>img</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>属性</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>align=absmiddle</span>表示图像的中间与同一行中最大元素的中间对齐<span
+lang=EN-US style='mso-bidi-font-weight:bold'><o:p></o:p></span></p>
+
+<p class=MsoNormal>例子：<span lang=EN-US>&lt;img src=&quot;images/pen.png&quot;
+align=&quot;absmiddle&quot;/&gt;</span></p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>字体复合写法</span></h1>
+
+<p class=MsoNormal>顺序：<span lang=EN-US>font-style | font-variant | font-weight
+| font-size | line-height | font-family</span></p>
+
+<p class=MsoNormal><span lang=EN-US>font:italic small-caps bold 12px/1.5em
+arial,verdana;</span></p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>背景复合写法</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>background:green url('images/1.jpg')
+no-repeat 0px 0px/contain;</span></p>
+
+<h1><span lang=EN-US>css</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>样式的书写顺序</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>1.</span>位置属性<span lang=EN-US>(position,
+top, right, z-index, display, float</span>等<span lang=EN-US>) </span></p>
+
+<p class=MsoNormal><span lang=EN-US>2.</span>大小<span lang=EN-US>(width, height,
+padding, margin) </span></p>
+
+<p class=MsoNormal><span lang=EN-US>3.</span>文字系列<span lang=EN-US>(font,
+line-height, letter-spacing, color- text-align</span>等<span lang=EN-US>) </span></p>
+
+<p class=MsoNormal><span lang=EN-US>4.</span>背景<span lang=EN-US>(background,
+border</span>等<span lang=EN-US>) </span></p>
+
+<p class=MsoNormal><span lang=EN-US>5.</span>其他<span lang=EN-US>(animation,
+transition</span>等<span lang=EN-US>)<span style='mso-bidi-font-weight:bold'><o:p></o:p></span></span></p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>解决</span><span lang=EN-US>div</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>框中图片下方有空隙的问题</span></h1>
+
+<h2>产生原因</h2>
+
+<p class=MsoNormal>不管<span lang=EN-US>div</span>中是否有文本，图片下面总是有一个空隙，图片下面的空隙是由于图片默认基线对齐造成的</p>
+
+<h2>解决办法</h2>
+
+<p class=MsoNormal><span lang=EN-US>1</span>、将图片设置为<span lang=EN-US>
+display:block</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2</span>、设置图片的对齐方式 如：<span lang=EN-US>vertical-align:center</span></p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>绝对定位和浮动</span></h1>
+
+<h2>浮动元素会生成一个块级框，而不论它本身是何种元素</h2>
+
+<p class=MsoNormal>具体表现更像<span lang=EN-US>inline-block</span>，如果浮动非替换元素，则要指定一个明确的宽度；否则，它们会尽可能地窄。</p>
+
+<p class=MsoNormal>注释：假如在一行之上只有极少的空间可供浮动元素，那么这个元素会跳至下一行，这个过程会持续到某一行拥有足够的空间为止。</p>
+
+<h2>绝对定位元素也会生成一个块级框，而不论原来是什么元素</h2>
+
+<h1><span lang=EN-US>vertical</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>属性</span></h1>
+
+<h2>相关知识点</h2>
+
+<p class=MsoNormal><span lang=EN-US>font-size</span>的百分值是相对于向外的第一含有<span
+lang=EN-US>font-size</span>属性的层的<span lang=EN-US>font-size</span>大小而言的，而这里的<span
+lang=EN-US>vertical-align</span>，有些不拘一格，是相对于此标签继承的<span lang=EN-US>line-height</span>值决定的</p>
+
+<h2>应用场景（<span lang=EN-US>div</span>中图片水平垂直居中）</h2>
+
+<p class=MsoNormal>可以在<span lang=EN-US>div</span>里面加一个<span lang=EN-US>span</span>空标签，把它的高度设为<span
+lang=EN-US>100%</span>，再给它一个<span lang=EN-US>vertical-align:middle</span>样式，同样地给<span
+lang=EN-US>img</span>一个<span lang=EN-US>vertical-align:middle</span>样式，那么<span
+lang=EN-US>img</span>就可以在<span lang=EN-US>div</span>里面垂直居中了<b><span lang=EN-US><o:p></o:p></span></b></p>
+
+<h2>应用扩展</h2>
+
+<p class=MsoNormal>加一个<span lang=EN-US>display:inline-block</span>是为了触发它的<span
+lang=EN-US>IE6</span>下的<span lang=EN-US>layout</span>，以让本来没有<span lang=EN-US>layout</span>的<span
+lang=EN-US>span</span>可以设置宽和高，另外将<span lang=EN-US>div</span>设置成<span
+lang=EN-US>font-size:0</span>还可以消除代码换行所造成的空隙，同样的原理也可以实现文字居中。</p>
+
+<h1><span lang=EN-US>&lt;header&gt;&lt;/header&gt;</span></h1>
+
+<h2><span lang=EN-US>&lt;header&gt; </span>标签定义文档的页眉（介绍信息）</h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>inline-block</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>和</span><span lang=EN-US>float </span></h1>
+
+<h2>区别和联系</h2>
+
+<p class=MsoNormal>均能使元素在同一行显示，但是浮动会使元素脱离文档流，元素会紧挨着并列对齐；而<span lang=EN-US>inline-block</span>，则会使元素之间留有空隙，同时在<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='color:red'>IE6</span><span
+style='color:red'>、<span lang=EN-US>IE7</span></span></b>中不识别<span lang=EN-US>display:inline-block</span>属性，但使用<span
+lang=EN-US>inline-block</span>属性在<span lang=EN-US>IE</span>下会触发<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='color:red'>layout</span></b>，从而使内联元素拥有了<span
+lang=EN-US>display:inline-block</span>属性的表症；但是，将块状元素设置成<span lang=EN-US>inline-block</span>样式则不支持</p>
+
+<h2>使用场景</h2>
+
+<p class=MsoNormal>使用<span lang=EN-US>inline-block</span>：当你需要控制元素的垂直对齐跟水平排列时，使用<span
+lang=EN-US>inline-block</span>。</p>
+
+<p class=MsoNormal>使用浮动：当你需要让元素环绕某一个元素时，或者需要<b style='mso-bidi-font-weight:
+normal'><span style='color:red'>支持旧版本<span lang=EN-US>IE</span></span></b>，或者不想处理<span
+lang=EN-US>inline-block</span>带来的<b style='mso-bidi-font-weight:normal'><span
+style='color:red'>空白问题时</span></b>，使用浮动</p>
+
+<h2>去除<span lang=EN-US>inline-block</span>间隙</h2>
+
+<p class=MsoNormal>删除<span lang=EN-US>html</span>中的空白：不要让元素之间换行（不推荐）</p>
+
+<p class=MsoNormal>使用负边距：你可以用负边距来补齐空白（一般般）</p>
+
+<p class=MsoNormal>给父元素设置<span lang=EN-US>font-size:0</span>，这需要给子元素重新设置字体大小（推荐）</p>
+
+<h1><span lang=EN-US>margin-top</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>问题</span></h1>
+
+<p class=MsoNormal>父元素的盒子包含一个子元素盒子，给子元素盒子一个垂直外边距<span lang=EN-US>margin-top</span>，父元素盒子也会往下走<span
+lang=EN-US>margin-top</span>的值，而子元素的边距则没有发生变化</p>
+
+<h2>原因解析</h2>
+
+<p class=MsoNormal>所有毗邻的两个或更多盒元素的<span lang=EN-US>margin</span>将会合并为一个<span
+lang=EN-US>margin</span>共享之，毗邻的定义为：同级或者嵌套的盒元素，并且他们之间没有非空内容，<span lang=EN-US>padding</span>或<span
+lang=EN-US>border</span>分割</p>
+
+<h2>解决办法：</h2>
+
+<p class=MsoNormal><span lang=EN-US>1</span>、修改父元素的高度，增加<span lang=EN-US>padding-top</span>样式模拟（<span
+lang=EN-US>padding-top:1px;</span>常用）</p>
+
+<p class=MsoNormal><span lang=EN-US>2</span>、为父元素添加<span lang=EN-US>overflow:hidden;</span>样式即可（完美）</p>
+
+<p class=MsoNormal><span lang=EN-US>3</span>、为父元素或者子元素声明浮动（<span lang=EN-US>float</span>：<span
+lang=EN-US>left;</span>可用）</p>
+
+<p class=MsoNormal><span lang=EN-US>4</span>、为父元素添加<span lang=EN-US>border</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5</span>、为父元素或者子元素声明绝对定位</p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>块元素</span><span lang=EN-US>100%</span><span style='font-family:
+"微软雅黑",sans-serif;mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;
+mso-hansi-font-family:等线;mso-hansi-theme-font:minor-latin'>宽度边框共存会出现横向滚动条</span></h1>
+
+<h2>解决办法</h2>
+
+<p class=MsoNormal><span lang=EN-US>1</span>、就是不设置<span lang=EN-US>100%</span>，因为<span
+lang=EN-US>div</span>默认就是<span lang=EN-US>100%</span>宽度的，而且这个宽度是包括边框<span
+lang=EN-US>2</span>、采用<span lang=EN-US>css</span>表格样式，如下：</p>
+
+<h2><span lang=EN-US>box-sizing: content-box(default)/border-box/padding-box</span>。</h2>
+
+<p class=MsoNormal><span lang=EN-US>content-box</span>，<span lang=EN-US>border</span>和<span
+lang=EN-US>padding</span>不计算入<span lang=EN-US>width</span>之内</p>
+
+<p class=MsoNormal><span lang=EN-US>padding-box</span>，<span lang=EN-US>padding</span>计算入<span
+lang=EN-US>width</span>内</p>
+
+<p class=MsoNormal><span lang=EN-US>border-box</span>，<span lang=EN-US>border</span>和<span
+lang=EN-US>padding</span>计算入<span lang=EN-US>width</span>之内</p>
+
+<h2><span lang=EN-US>ie8+</span>浏览器支持<span lang=EN-US>content-box</span>和<span
+lang=EN-US>border-box</span></h2>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>html</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>高度问题</span></h1>
+
+<p class=MsoNormal>在怪异模式下，也就是网页头部不写<span lang=EN-US>DOCTYPE</span>的时候，<span
+lang=EN-US>body</span>可以作为<span lang=EN-US>html</span>元素的根元素，设置它的高度为百分之百的时候（不考虑外边距），可以使的页面的高度和浏览器客户区相同。</p>
+
+<p class=MsoNormal>在标准模式下，也就是网页头部写<span lang=EN-US>DOCTYPE</span>的时候，<span
+lang=EN-US>body</span>不是<span lang=EN-US>html</span>页面的根元素，<span lang=EN-US>html</span>才是根元素，如果仅仅设置<span
+lang=EN-US>body</span>的<span lang=EN-US>100%</span>，不设置<span lang=EN-US>html</span>元素的高度为<span
+lang=EN-US>100%</span>，那么<span lang=EN-US>body</span>的高度不会生效，之所以不生效，是因为如果要以百分比设置元素的尺寸，必要以父元素的尺寸作为参考，如果父元素没有设置尺寸，自然不会生效。</p>
+
+<h2><span style='background:white'>解析：<span lang=EN-US>html</span>有点特殊，它的<span
+lang=EN-US>widht</span>和<span lang=EN-US>height</span>是由浏览器窗口大小决的<span
+lang=EN-US><o:p></o:p></span></span></h2>
+
+<h1><span lang=EN-US>input</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>光标显示不一致问题</span></h1>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='color:#0070C0'>IE</span><span style='color:#0070C0'>：</span></b>不管该行有没有文字，光标高度与<span
+lang=EN-US>font-size</span>一致。 </p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='color:#0070C0'>FF</span><span style='color:#0070C0'>：</span></b>该行有文字时，光标高度与<span
+lang=EN-US>font-size</span>一致。该行无文字时，光标高度与<span lang=EN-US>input</span>的<span
+lang=EN-US>height</span>一致。 </p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-US
+style='color:#0070C0'>Chrome</span><span style='color:#0070C0'>：</span></b>该行无文字时，光标高度与<span
+lang=EN-US>line-height</span>一致；该行有文字时，光标高度从<span lang=EN-US>input</span>顶部到文字底部<span
+lang=EN-US>(</span>这两种情况都是在有设定<span lang=EN-US>line-height</span>的时候<span
+lang=EN-US>)</span>，如果没有<span lang=EN-US>line-height</span>，则是与<span
+lang=EN-US>font-size</span>一致</p>
+
+<p class=MsoNormal>一般用的代码如下，能解决大部分问题，当然也可以在最外层嵌套一层<span lang=EN-US>div</span></p>
+
+<p class=MsoNormal><span lang=EN-US>input{ height:16px; padding:4px 0px;
+font-size:16px; }</span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='color:#0070C0'>注意：</span></b><span lang=EN-US>input</span>有个<span
+lang=EN-US>outline</span>属性我们不需要外边框就可以去掉<span lang=EN-US>outline:none</span>，还有去掉<span
+lang=EN-US>border</span>：<span lang=EN-US>none;</span></p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>浮动清理</span></h1>
+
+<p class=MsoNormal>在一个容器中，如果里面的元素为浮动元素，在没有给容器指定高度的时候，容器是包不住子元素的，指定高度和宽度后则可以，如果容器的高度不是固定的，解决方法；清理浮动</p>
+
+<p class=MsoNormal>正常情况下，子元素会自动撑开父级容器，加入浮动之后则包不住</p>
+
+<h2><span lang=EN-US>1</span>、让父级元素和子级元素都浮动</h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>缺点：如果父级太多需要给所有父级全部加上浮动，并且<span
+lang=EN-US>margin</span>会失效</p>
+
+<h2><span lang=EN-US>2</span>、给父级设置<span lang=EN-US>inlne-block</span>属性（<span
+lang=EN-US>inlne-block</span>本身不会脱离文档流）</h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:12.0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='mso-bidi-font-size:12.0pt'>缺点：<span lang=EN-US>margin</span>也会失效<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<p class=MsoNormal><span class=2><span lang=EN-US>3</span>、给浮动元素下面添加一个同级的非浮动元素，并给新添加的元素添加<span
+lang=EN-US>clear:both</span>样式</span><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;color:#0070C0'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>当把新添加的元素设置<span
+lang=EN-US>height</span>：<span lang=EN-US>0</span>样式后，<span lang=EN-US>IE6</span>会有<span
+lang=EN-US>bug(IE6</span>下的最小高度问题<span lang=EN-US> 19px</span>问题<span
+lang=EN-US>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>在<span
+lang=EN-US>IE6</span>下任何小于<span lang=EN-US>19</span>像素的元素会被当成<span lang=EN-US>19</span>像素处理</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>19</span>像素解决方法</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>1</span>）、为容器添加<span lang=EN-US>font-size:0,</span>高度会变小，但是还有<span
+lang=EN-US>2</span>个像素的空隙</p>
+
+<h2><span lang=EN-US>4</span>、在浮动元素下方添加一个<span lang=EN-US>&lt;br
+clear=&quot;all&quot;/&gt;</span>标签<span lang=EN-US>,</span>本身也是没有高度的</h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>缺点：不符合<span
+lang=EN-US>w3c</span>标准，即结构、样式、行为三者分离的要求</p>
+
+<p class=MsoNormal><b><span lang=EN-US style='mso-bidi-font-size:16.0pt;
+font-family:"等线 Light";mso-ascii-theme-font:major-latin;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-latin;mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:major-bidi;color:#0070C0'>5</span></b><b><span
+style='mso-bidi-font-size:16.0pt;font-family:"等线 Light";mso-ascii-theme-font:
+major-latin;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-latin;
+mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:major-bidi;
+color:#0070C0'>、使用<span lang=EN-US>after</span>伪类，给浮动元素的父级添加一个<span lang=EN-US>after</span>伪类，并在伪类中添加<span
+lang=EN-US>clear:both</span>样式</span></b><b style='mso-bidi-font-weight:normal'><span
+lang=EN-US style='mso-bidi-font-size:12.0pt;color:#0070C0'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>after</span>伪类的作用是在一个元素的末尾追加内容</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>注意：<span
+lang=EN-US>clear</span>元素是只能加给块元素的，加给内嵌元素是不起作用的，另外<span lang=EN-US>IE6</span>、<span
+lang=EN-US>IE7</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>是不支持除<span
+lang=EN-US>a</span>标签之外的其它伪类的</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>但是在<span
+lang=EN-US>IE6</span>、<span lang=EN-US>7</span>下浮动元素的父级有宽度或高度的话，就不用清浮动</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>如果浮动元素父级没有宽高的话，需要给浮动的父级元素添加<span
+lang=EN-US>zoom:1</span>样式</p>
+
+<h2><span lang=EN-US>6</span>、给浮动元素的父级添加<span lang=EN-US>overflow:hidden</span>属性<span
+lang=EN-US>(</span>需要父级元素有高度和宽度<span lang=EN-US>)</span>，也可以清浮动</h2>
+
+<p class=MsoNormal><span lang=EN-US style='mso-bidi-font-size:12.0pt'><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span
+style='mso-bidi-font-size:12.0pt'>需要配合<span lang=EN-US>zoom:1</span>使用（<b
+style='mso-bidi-font-weight:normal'><span lang=EN-US style='color:#0070C0'>IE6</span><span
+style='color:#0070C0'>、<span lang=EN-US>7</span>、<span lang=EN-US>8</span>专用</span></b>）<span
+lang=EN-US><o:p></o:p></span></span></p>
+
+<h2><span lang=EN-US>overflow:hidden</span>清浮动的原理</h2>
+
+<p class=MsoNormal>如果没有给父级元素指定高度，当给父级元素设置了<span lang=EN-US>overflow:hidden</span>之后会触发<span
+lang=EN-US>BFC(block formatting context</span>即块级格式化上下文<span lang=EN-US>)</span>（元素里面的子元素，不会影响外部元素的布局），首先会重新计算<span
+lang=EN-US>height:auto</span>的真实高度，所以此时高度不为<span lang=EN-US>0</span>，而是子元素的高度。总之，是先计算真实高度，再去隐藏。</p>
+
+<h2>问题：如果文本超出容器则会被截断</h2>
+
+<h1><span lang=EN-US>IE6</span><span style='font-family:"微软雅黑",sans-serif;
+mso-ascii-font-family:等线;mso-ascii-theme-font:minor-latin;mso-hansi-font-family:
+等线;mso-hansi-theme-font:minor-latin'>下双边距</span><span lang=EN-US>bug</span></h1>
+
+<h2>产生条件</h2>
+
+<p class=MsoNormal><span lang=EN-US>1</span>、要为块状元素；</p>
+
+<p class=MsoNormal><span lang=EN-US>2</span>、要左侧浮动；</p>
+
+<p class=MsoNormal><span lang=EN-US>3</span>、要有左外边距或右外边距（<span lang=EN-US>margin-left</span>，<span
+lang=EN-US>margin-right</span>）</p>
+
+<h2>表现</h2>
+
+<p class=MsoNormal><span style='color:red'>只有最靠近浮动方向的元素有双边距<span lang=EN-US>bug</span></span></p>
+
+<h2>解决办法</h2>
+
+<p class=MsoNormal><span lang=EN-US>1</span>、给<span lang=EN-US>float</span>的元素添加一个<span
+lang=EN-US>display</span>：<span lang=EN-US>inline</span>或这<span lang=EN-US>display:inline-block;</span></p>
+
+<h2>结论</h2>
+
+<p class=MsoNormal><span lang=EN-US>float:left</span>等浮动属性可以让<span lang=EN-US>inline</span>元素拥有<span
+lang=EN-US> haslayout</span>，会让<span lang=EN-US>inline</span>元素表现得跟<span
+lang=EN-US>inline-block</span>元素的特性一样（即支持高宽，垂直<span lang=EN-US>margin</span>和<span
+lang=EN-US>padding</span>等）</p>
+
+<h1><span style='font-family:"微软雅黑",sans-serif;mso-ascii-font-family:等线;
+mso-ascii-theme-font:minor-latin;mso-hansi-font-family:等线;mso-hansi-theme-font:
+minor-latin'>兼容性问题</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>1</span>、计算一定要精确，不要让内容的宽度超出我们设置的宽度，在<span
+lang=EN-US>IE6</span>下，内容会撑开设置好的宽高（尤其是在使用了<span lang=EN-US>padding</span>的时候）</p>
+
+<p class=MsoNormal><span lang=EN-US>2</span>、在<span lang=EN-US>IE6</span>元素浮动，如果宽度需要内容撑开，就给里面的块元素都添加浮动</p>
+
+<p class=MsoNormal><span lang=EN-US>3</span>、在<span lang=EN-US>IE6</span>，<span
+lang=EN-US>7</span>下要元素通过浮动并在同一行，就给这行元素都加上浮动</p>
+
+<p class=MsoNormal><span lang=EN-US>4</span>、注意标签的嵌套规范，<span lang=EN-US>p</span>标签下是不能嵌套<span
+lang=EN-US>h</span>标签的，在<span lang=EN-US>IE6</span>下会被分为上下两块。</p>
+
+<p class=MsoNormal><span lang=EN-US>5</span>、<span lang=EN-US>IE6</span>下的最小高度问题，在<span
+lang=EN-US>IE6</span>下元素的高度小于<span lang=EN-US>19px</span>时会被当成<span lang=EN-US>19px</span>处理，解决方法，将该元素添加属性<span
+lang=EN-US> overflow:hidden</span>属性</p>
+
+<p class=MsoNormal><span lang=EN-US>6</span>、<span lang=EN-US>IE6</span>下<span
+lang=EN-US> 1px dotted</span>在<span lang=EN-US>IE6</span>下不支持，解决办法：切背景平铺</p>
+
+<p class=MsoNormal><span lang=EN-US>7</span>、在<span lang=EN-US>IE6</span>下解决<span
+lang=EN-US>margin</span>传递要触发<span lang=EN-US>haslayout</span>属性，解决方法</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>1</span>）让父级元素或者子级元素浮动，或者为父级指定固定宽高<span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>2</span>）标准浏览器为父级元素添加<span lang=EN-US>overflow:hidden</span>也可以，但是<span
+lang=EN-US>IE6</span>不行<span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>3</span>）为父级元素添加<span lang=EN-US>zoom:1</span>属性，兼容所有浏览器写法：<span
+lang=EN-US>zoom:1;overflow:hidden;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(4)</span>、在<span
+lang=EN-US>IE6</span>下父级有边框的时候，子元素的<span lang=EN-US>margin</span>值会消失，解决方法，触发<span
+lang=EN-US>haslayout</span>属性，添加<span lang=EN-US>zoom:1</span>属性</p>
+
+<p class=MsoNormal><span lang=EN-US>8</span>、<span lang=EN-US>inline-block </span>在<span
+lang=EN-US>IE6</span>下是不支持块标签的，即没有块标签所具备的属性</p>
+
+<p class=MsoNormal><span lang=EN-US>9</span>、<span lang=EN-US>IE6</span>下的双边距<span
+lang=EN-US>bug,</span>产生的原因，<span lang=EN-US>(</span>内嵌元素变为块则正常<span
+lang=EN-US>)</span>块元素有浮动和有横向的<span lang=EN-US>margin</span>，这时横向的<span
+lang=EN-US>margin</span>会被放大成两倍</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决办法，<span
+lang=EN-US>display:inline;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>如果在写成：<span
+lang=EN-US>margin-right:</span>一行右侧第一个元素有双边距</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>如果写成：<span
+lang=EN-US>margin-left:</span>一行左侧第一个元素有双边距</p>
+
+<p class=MsoNormal><span lang=EN-US>10</span>、在<span lang=EN-US>IE6</span>，<span
+lang=EN-US>7</span>下，<span lang=EN-US>li</span>本身没浮动（例如：<span lang=EN-US>li</span>标签下有一个<span
+lang=EN-US>a</span>标签和<span lang=EN-US>sapn</span>标签，且<span lang=EN-US>a</span>和<span
+lang=EN-US>span</span>都为浮动），<span lang=EN-US>li</span>下面就会产生一个间隙</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决方法：</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>1</span>）为<span lang=EN-US>li</span>也添加浮动</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>2</span>）为<span lang=EN-US>li</span>添加垂直对齐方式<span lang=EN-US><span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>vertical-align:top;<span
+style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span></span>难点：如果<span
+lang=EN-US>li</span>和<span lang=EN-US>span</span>的高度为<span lang=EN-US>12</span>，小于<span
+lang=EN-US>IE6</span>的最小高度问题，即<span lang=EN-US>li</span>的间隙和最小高度并存时，解决办法：给<span
+lang=EN-US>li</span>添加浮动，并添加<span lang=EN-US>overflow:hidden</span>去除最小高度影响，同时还要个<span
+lang=EN-US>li</span>添加高度和宽度，清除浮动</p>
+
+<p class=MsoNormal><span lang=EN-US>11</span>、当一行子元素占有的宽度之和和父级的宽度相差超过<span
+lang=EN-US>3px,</span>或者有不满行的时候，最后一行子元素的下<span lang=EN-US>margin</span>在<span
+lang=EN-US>IE6</span>下就会失效</p>
+
+<p class=MsoNormal><span lang=EN-US>12</span>、在<span lang=EN-US>IE6</span>下的文字溢出<span
+lang=EN-US>BUG<span style='mso-tab-count:6'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>子元素的宽度和父级的宽度相差小于<span
+lang=EN-US>3px</span>的时候，两个浮动元素中间有注释后者内嵌元素的时候，文字会溢出</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决方法：用<span
+lang=EN-US>div</span>把注释或者内嵌元素包起来</p>
+
+<p class=MsoNormal><span lang=EN-US>13</span>、当浮动元素和绝对定位元素时并列的时候，在<span
+lang=EN-US>IE6</span>下绝对定位会失效</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决方法：给定位元素外边包一个<span
+lang=EN-US>div</span></p>
+
+<p class=MsoNormal><span lang=EN-US>14</span>、在<span lang=EN-US>IE6</span>、<span
+lang=EN-US>7</span>下，子元素有相对定位的话，父级的<span lang=EN-US>overflow</span>是包不住子元素的</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决方法：给父级也添加相对定位</p>
+
+<p class=MsoNormal><span lang=EN-US>15</span>、在<span lang=EN-US>IE6</span>下绝对定位元素的父级宽高是奇数的话，元素的<span
+lang=EN-US>ringht</span>和<span lang=EN-US>bottom</span>值会有一个像素的偏差，这个问题本身是没法解决的</p>
+
+<p class=MsoNormal><span lang=EN-US>16</span>、固定定位在<span lang=EN-US>IE6</span>下是不支持的</p>
+
+<p class=MsoNormal><span lang=EN-US>17</span>、在<span lang=EN-US>IE6</span>、<span
+lang=EN-US>7</span>下输入类型的表单控件上下各有<span lang=EN-US>1px</span>的间隙</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决方法<span
+lang=EN-US>:</span>给<span lang=EN-US>input</span>添加浮动</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>在<span
+lang=EN-US>IE6</span>、<span lang=EN-US>7</span>下输入类型的表单控件加<span lang=EN-US>border</span>：<span
+lang=EN-US>none</span>无效</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决办法：重置<span
+lang=EN-US>input</span>的背景</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>在<span
+lang=EN-US>IE6</span>、<span lang=EN-US>7</span>下输入类型的表单控件输入文字的时候，背景图片会跟着一块移动</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>解决方法：把背景加给父级，同时清掉自身的背景，即<span
+lang=EN-US>background:none;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>18</span>、<span lang=EN-US>css hack</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>\9
+IE10</span>之前的<span lang=EN-US>IE</span>浏览器解析<span lang=EN-US><span
+style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>如：<span
+lang=EN-US>background:blue\9</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>+</span>，<span
+lang=EN-US>*IE7</span>包括<span lang=EN-US>IE7</span>之前的<span lang=EN-US>IE</span>浏览器解析<span
+lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp; </span></span>如：<span
+lang=EN-US>+background:yellow;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>_IE6</span>包括<span
+lang=EN-US>IE6</span>以下的浏览器执行<span lang=EN-US><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>如：<span
+lang=EN-US>_background:blue;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>19</span>、<span lang=EN-US>IE6 png</span>图片滤镜效果（使用<span
+lang=EN-US>js</span>插件；原生滤镜，<span lang=EN-US>css</span>样式</p>
+
+<p class=MsoNormal><span lang=EN-US>20</span>、！<span lang=EN-US>important </span>提升样式优先级权重</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>默认<span
+lang=EN-US>&lt;</span>类型<span lang=EN-US>&lt;class&lt;id&lt;style(</span>行间<span
+lang=EN-US>)&lt;important</span></p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>如：<span
+lang=EN-US>background:red important;<span style='mso-tab-count:1'>&nbsp; </span></span>在<span
+lang=EN-US>IE6</span>下，在<span lang=EN-US>important</span>后面再加一条同样的样式，会破坏掉<span
+lang=EN-US>important</span>的作用，会按照默认的优先级顺序来走</p>
+
+<p class=MsoNormal><span lang=EN-US>21</span>、特殊布局</p>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>（<span
+lang=EN-US>1</span>）圣杯布局（双飞翼布局）即左右宽度固定，中间宽度自适应伸缩；并且中间先加载</p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+<h1><span lang=EN-US>position:fixed</span></h1>
+
+<h2>定位父级</h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>默认情况下是相对于浏览器窗口进行定位的</p>
+
+<h2>特殊情况</h2>
+
+<p class=MsoNormal><span lang=EN-US><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>给父级元素加上<span
+lang=EN-US>transform:translate(0,0),fixed</span>即可根据父级进行定位</p>
+
+</div>
+
+</body>
+
+</html>

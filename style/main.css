@@ -1,0 +1,602 @@
+@font-face {
+	font-family: 'iconfont';
+	src: url('../font/iconfont.eot');
+	src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff2') format('woff2'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body,
+#all {
+	width: 100%;
+	height: 100%;
+	background: #FFF;
+}
+
+#all {
+	position: relative;
+	min-width: 960px;
+	font-family: 'Microsoft YaHei';
+}
+
+
+/*左边菜单栏样式*/
+
+#left-menu {
+	position: relative;
+	width: 220px;
+	height: 100%;
+	overflow: hidden;
+	transition: all 0.5s ease;
+}
+
+#left-menu .logo {
+	position: relative;
+	width: 220px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#head-logo {
+	display: none;
+	position: absolute;
+	top: 10px;
+	left: 8px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+#head-logo img {
+	width: 100%;
+	height: 100%;
+}
+
+#left-menu .barTips {
+	display: none;
+	position: absolute;
+	z-index: 500;
+	left: 0;
+	top: 0;
+	width: 5px;
+	height: 56px;
+	background-color: #009688;
+	transition: top 0.2s ease;
+}
+
+#left-menu .ls-content {
+	width: 240px;
+	height: 100%;
+	list-style: none;
+	overflow-y: scroll;
+}
+
+#left-menu .ls-content>li {
+	width: 220px;
+	line-height: 56px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, .7);
+	font-style: normal;
+	cursor: pointer;
+}
+
+#left-menu .ls-content>li .ls-icon {
+	font-family: "iconfont";
+	font-style: normal;
+}
+
+#left-menu .ls-content>li>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 56px;
+	text-indent: 16px;
+	cursor: pointer;
+}
+
+#left-menu .ls-content>li:hover>div {
+	color: #FFF;
+}
+
+#left-menu .ls-content>li .ls-menu {
+	padding-left: 16px;
+}
+
+#left-menu .ls-content>li .ls-sec-menu {
+	display: none;
+}
+
+#left-menu .ls-content>li dl {
+	list-style: none;
+	text-indent: 50px;
+	background-color: rgba(0, 0, 0, .3);
+}
+
+#left-menu .ls-content>li dl dd {
+	line-height: 40px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#left-menu .ls-content>li .ls-menu-title {
+	position: relative;
+	line-height: 56px;
+	text-indent: 35px;
+}
+
+#left-menu .ls-content>li .ls-third-menu {
+	text-indent: 80px;
+}
+
+#left-menu .ls-content>li .ls-menu-moreup {
+	position: absolute;
+	right: 20px;
+	top: 19px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid #CCC;
+}
+
+#left-menu .ls-content>li .ls-menu-morelow {
+	position: absolute;
+	right: 20px;
+	top: 25px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #FFF;
+	border-bottom: 6px solid transparent;
+}
+
+
+/*右边内容部分样式*/
+
+#container {
+	position: absolute;
+	top: 0px;
+	left: 220px;
+	bottom: 0;
+	right: 0;
+	background-color: #FFF;
+}
+
+
+/*头部样式*/
+
+#header {
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	font-family: 'iconfont';
+}
+
+.ls-header-bg1 {
+	background-color: #1E9FFF;
+	color: #FFF;
+}
+
+#header .leftTools {
+	height: 50px;
+	float: left;
+}
+
+#header .leftTools li,
+#header .rightTools .ls-tools {
+	list-style: none;
+	display: inline-block;
+	line-height: 50px;
+	padding: 0 18px;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+#header .leftTools li input {
+	display: inline-block;
+	height: 32px;
+	width: 170px;
+	padding-left: 10px;
+	border-radius: 5px;
+	font-family: 'Microsoft YaHei';
+	outline: none;
+	border: none;
+}
+
+#header .rightTools .ls-tools:nth-child(1) {
+	position: relative;
+}
+
+#header .rightTools .ls-tools:nth-child(1)::after {
+	content: '';
+	position: absolute;
+	left: 30px;
+	top: 14px;
+	width: 8px;
+	height: 8px;
+	text-align: center;
+	border-radius: 10px;
+	background-color: red;
+}
+
+#header .rightTools .ls-note {
+	position: relative;
+}
+
+#header .rightTools .ls-note .noteContainer {
+	display: none;
+	position: absolute;
+	z-index: 100;
+	top: 41px;
+	right: 15px;
+	width: 300px;
+	height: 180px;
+	font-size: 15px;
+	box-shadow: 0 0 5px #BBB;
+	background-color: #FFF;
+}
+
+#header .ls-note .noteContainer .note-header {
+	height: 50px;
+	background-color: #344058;
+	line-height: 50px;
+	color: #FFF;
+	cursor: move;
+}
+
+#header .ls-note .noteContainer .note-header .note-title {
+	margin-left: 25px;
+}
+
+#header .ls-note .noteContainer .note-content textarea {
+	display: block;
+	width: 100%;
+	height: 130px;
+	min-width: 300px;
+	min-height: 130px;
+	line-height: 20px;
+	padding: 10px 20px;
+	border: none;
+	box-sizing: border-box;
+	color: #666;
+	word-wrap: break-word;
+	outline: none;
+	font-size: 14px;
+	color: #666;
+	font-family: "microsoft yahei";
+}
+
+#header .ls-note .noteContainer .note-header .note-close {
+	position: absolute;
+	top: 0px;
+	right: 25px;
+	font-family: 'iconfont';
+	cursor: pointer;
+}
+
+#header .rightTools .authorInfo {
+	position: relative;
+	font-family: 'Microsoft YaHei';
+}
+
+#header .rightTools .authorInfo:hover .authorInfoList {
+	display: block;
+}
+
+#header .rightTools .authorInfo:hover .authorBtn {
+	top: 17px;
+	border: 6px solid transparent;
+	border-bottom-color: #FFF;
+}
+
+#header .rightTools .ls-tools .authorBtn {
+	position: absolute;
+	top: 23px;
+	right: 0px;
+	border: 6px solid transparent;
+	border-top-color: #FFF;
+}
+
+#header .rightTools .authorInfo .authorInfoList {
+	position: absolute;
+	display: none;
+	list-style: none;
+	z-index: 50;
+	right: 0;
+	top: 50px;
+	width: 100px;
+	padding: 5px 0;
+	background: #FFF;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+}
+
+#header .rightTools .authorInfoList li {
+	line-height: 36px;
+	height: 36px;
+	text-align: center;
+	font-size: 15px;
+	color: #666;
+	cursor: pointer;
+}
+
+#header .rightTools .authorInfoList li:hover {
+	background-color: #F2F2F2;
+}
+
+#header .rightTools {
+	height: 50px;
+	float: right;
+}
+
+#header .rightTools li .author {
+	font-size: 15px;
+}
+
+
+/*选项卡部分*/
+
+#container .item-page {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #EEE;
+	box-sizing: border-box;
+}
+
+#container .item-page .ls-prebtn {
+	position: absolute;
+	top: 0;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	box-sizing: border-box;
+	font-size: 20px;
+	text-align: center;
+	font-family: 'iconfont';
+	cursor: default;
+}
+
+#container .item-page .ls-pre-button {
+	left: 0;
+	border-right: 1px solid #eee;
+}
+
+#container .item-page .ls-pre-button:hover,
+#container .item-page .ls-next-button:hover,
+#container .item-page .ls-close-button:hover,
+#container .item-page .ls-tabbar-list li:hover {
+	background-color: #f6f6f6;
+}
+
+#container .item-page .ls-next-button {
+	right: 40px;
+	border-left: 1px solid #eee;
+}
+
+#container .item-page .ls-close-button {
+	right: 0;
+	position: absolute;
+	border-left: 1px solid #eee;
+}
+
+#container .item-page .ls-close-button .ls-closeList {
+	display: none;
+	list-style: none;
+	position: absolute;
+	top: 40px;
+	right: 0;
+	width: 150px;
+	min-width: 100%;
+	padding: 5px 0;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+	border: 1px solid #d2d2d2;
+	background-color: #fff;
+	z-index: 100;
+	border-radius: 2px;
+	white-space: nowrap;
+	box-sizing: border-box;
+	font-family: 'Microsoft YaHei';
+}
+
+#container .item-page .ls-close-button:hover .ls-closeList {
+	display: block;
+}
+
+#container .item-page .ls-close-button .ls-closeList li {
+	line-height: 36px;
+	height: 36px;
+	text-align: center;
+	font-size: 15px;
+	color: #666;
+	cursor: pointer;
+}
+
+#container .item-page .ls-close-button .ls-closeList li:hover {
+	background-color: #f2f2f2;
+}
+
+#container .item-page .ls-tabbar-list {
+	position: absolute;
+	left: 40px;
+	right: 80px;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+#container .item-page .ls-tabbar-list ul {
+	width: 40px;
+	height: 100%;
+}
+
+#container .item-page .ls-tabbar-list li {
+	float: left;
+	position: relative;
+	list-style: none;
+	height: 40px;
+	width: 150px;
+	line-height: 40px;
+	padding-right: 30px;
+	padding-left: 10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-family: 'Microsoft YaHei';
+	font-size: 14px;
+	text-align: center;
+	border-right: 1px solid #EEE;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+#container .item-page .ls-tabbar-list li:nth-child(1) {
+	width: 40px;
+	padding: 0;
+	font-family: 'iconfont';
+}
+
+#container .item-page .ls-tabbar-list li i {
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	width: 17px;
+	height: 17px;
+	font-size: 12px;
+	line-height: 17px;
+	text-align: center;
+	font-style: normal;
+	border-radius: 50%;
+	font-family: 'iconfont';
+}
+
+#container .item-page .ls-tabbar-list li i:hover {
+	background: red;
+	color: #FFF;
+}
+
+
+/*iframe页面部分*/
+
+#container .content {
+	position: absolute;
+	top: 90px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+#container .content .pageContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #f2f2f2;
+	z-index: 1;
+}
+
+#container .content .pageContainer iframe {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*遮罩部分*/
+
+#shade {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 200;
+	background-color: rgba(0, 0, 0, .3);
+	overflow: hidden;
+}
+
+
+/*版权部分*/
+
+#copyRight,
+#ls-skins {
+	position: absolute;
+	right: -300px;
+	top: 50px;
+	bottom: 0;
+	width: 300px;
+	background-color: #FFF;
+	overflow: auto;
+}
+
+#ls-skins .ls-skins,
+#copyRight .ls-person {
+	height: 42px;
+	line-height: 42px;
+	padding: 0 15px;
+	border-bottom: 1px solid #f6f6f6;
+	color: #333;
+	border-radius: 2px 2px 0 0;
+	font-size: 14px;
+}
+
+#copyRight .ls-head-pic {
+	width: 100%;
+	height: 50px;
+	background: #01AAED;
+	text-align: center;
+	font-family: 'iconfont';
+	line-height: 50px;
+	font-size: 35px;
+	color: #FFF;
+	cursor: pointer;
+}
+
+#copyRight .ls-speak {
+	padding: 10px;
+	width: 260px;
+	background-color: #f2f2f2;
+	margin: 10px auto;
+	font-size: 15px;
+	text-indent: 2em;
+	line-height: 25px;
+	color: #333;
+	border-radius: 5px;
+}
+
+#copyRight .ls-speak span {
+	color: #01AAED;
+}
+
+#ls-skins ul {
+	list-style: none;
+}
+
+#ls-skins ul img {
+	display: block;
+	width: 210px;
+	margin: 10px 45px;
+}
+
+
+/*@media (max-width:990px) {
+	#header .logo {
+		display: none;
+	}
+	#header .tools {
+		left: 0;
+	}
+	#container .left {
+		display: none;
+	}
+	#container .right {
+		left: 0;
+	}
+}*/

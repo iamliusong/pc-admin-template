@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<link rel="stylesheet" href="./css/phonelogin.css" />
+		<title>用户手机号和密保问题验证</title>
+	</head>
+	<body>
+		<div class="header-box">用户手机号和密保问题验证</div>
+		<div class="help-box"></div>
+		<div class="head-icon">
+			<img src="./img/headpic.jpg"/>
+		</div>
+		<div class="login-box">
+			<form class="login-form">
+				<div class="login-input-box">
+					<label>&#xe63c;</label>
+					<input id="username" class="login-user-input" type="input" placeholder="请输入手机号" onkeyup="showUserClose()">
+					<span id="user-clear-btn" class="login-input-clear" onclick="clearUsername()">✖</span>
+					<span class="login-lose-pass" onclick="getCheckNum()">获取验证码</span>
+				</div>
+				<div class="login-input-box">
+					<label>&#xe83f;</label>
+					<input id="password" class="login-pass-input" type="password" placeholder="请输入6位验证码" onkeyup="showPassClose()">
+					<span id="pass-clear-btn" class="login-input-clear"  onclick="clearPass()">✖</span>
+					<span class="login-lose-pass login-check-num" id="login-check-num">123456</span>
+				</div>
+				<div class="login-input-box">
+					<label>&#xec2e;</label>
+					<input id="question" class="login-question-input" type="text" placeholder="密保答案，印象最深的一个人？" onkeyup="showQuestionClose()">
+					<span id="question-clear-btn" class="login-input-clear"  onclick="clearQuestion()">✖</span>
+				</div>
+				<div class="login-tools"></div>
+				<div class="login-btn" id="login-btn" onclick="nextSegment()">下一步</div>
+			</form>
+		</div>
+		<div class="other-login">
+			<p onclick="changeLogin()">用户名密码登录</p>
+			<p onclick="register()">注册</p>
+		</div>
+		<div class="footer-box">
+			版权所有，仿冒必究，仅供学习交流使用<br/>作者：刘松，完成时间：2019-07-14
+		</div>
+		<script type="text/javascript" src="./js/phonelogin.js" ></script>
+	</body>
+</html>

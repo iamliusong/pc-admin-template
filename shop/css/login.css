@@ -1,0 +1,151 @@
+@charset "utf-8";
+@font-face {
+	font-family: 'iconfont';
+	src: url('../font/iconfont.eot');
+	src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff2') format('woff2'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+html,body{
+	width:100%;
+	height:100%;
+}
+.header-box{
+	width:100%;
+	height:50px;
+	line-height: 50px;
+	font-size:16px;
+	text-align:center;
+	background-color:#eee;
+}
+.help-box{
+	height:40px;
+	line-height: 40px;
+	font-size:16px;
+	text-align:right;
+}
+.help-box span{
+	padding-right:10px;
+	cursor:pointer;
+}
+.head-icon{
+	height:70px;
+	text-align:center;
+}
+.head-icon img{
+	border-radius:50%;
+	height:70px;
+}
+.login-box{
+	margin:10px auto 20px;
+}
+.login-form{
+	width:96%;
+	margin:0 auto;
+}
+.login-input-box{
+	position: relative;
+	padding:12px 0 8px 0;
+	border-bottom: 1px solid #09c161;
+	font-size:16px;
+	line-height: 26px;
+}
+.login-input-box label{
+	font-family: 'iconfont';
+	padding:10px;
+}
+.login-input-box input{
+	padding:10px 0;
+	font-size:16px;
+	border:none;
+	outline:none;
+}
+.login-input-box .login-user-input{
+	width:70%;
+}
+.login-input-box .login-pass-input{
+	width:70%;
+}
+.login-input-clear{
+	visibility: hidden;
+	padding:10px 0 10px 10px;
+	
+}
+.login-lose-pass{
+	position:absolute;
+	top:17px;
+	right:0;
+	color:#CCC;
+}
+.login-tools{
+	height:20px;
+	margin-top:10px;
+}
+.login-btn{
+	height:50px;
+	line-height: 50px;
+	border-radius: 6px;
+	text-align:center;
+	background-color:#09c161;
+	color:#FFF;
+	opacity:0.5;
+}
+.other-login{
+	display: flex;
+	height:50px;
+	margin-bottom:20px;
+	align-items:center;
+	justify-content: space-between;
+}
+.other-login p{
+	line-height: 50px;
+	padding:0 16px;
+	font-size:16px;
+}
+.footer-box{
+	width:100%;
+	line-height: 24px;
+	font-size:16px;
+	color:#4d586a;
+	text-align:center;
+}
+.shade-box{
+	position: absolute;
+	display:flex;
+	left:0;
+	top:-100%;
+	z-index:10;
+	width:100%;
+	height:100%;
+	align-items: center;
+	justify-content: center;
+	background-color:rgba(0,0,0,.5);
+	transition: top 0.3s linear;
+}
+.shade-tips{
+	width:200px;
+	background-color:#FFF;
+	border-radius:10px;
+}
+.shade-tips p{
+	padding:10px;
+	font-size:16px;
+	line-height: 24px;
+	color:#BBB;
+	text-align:center;
+}
+
+.shade-confim{
+	width:170px;
+	height:50px;
+	margin:10px auto 10px;
+	border-radius:10px;
+	line-height: 50px;
+	text-align:center;
+	color:#FFF;
+	cursor:pointer;
+	background-color:#09c161;
+}

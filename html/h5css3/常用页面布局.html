@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>常用页面布局</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<script type="text/javascript" src="../../js/highlight.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../style/highlight/atom-one-dark.css" />
+		<link rel="stylesheet" type="text/css" href="../../style/comtheme.css" />
+		<style type="text/css">
+			#container {
+				margin: 0 auto;
+				padding-top: 10px;
+				width: 100%;
+				background-color: #fff;
+			}
+			
+			#href-box1 .inner-box {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 150px;
+				height: 150px;
+				transform: translate(-50%, -50%);
+				background-color: #CCC;
+			}
+			
+			#container .code {
+				padding: 0 50px;
+			}
+			
+			#href-box2 .top {
+				width: 100%;
+				height: 50px;
+				background-color: #F6F6F6;
+			}
+			
+			#href-box2 .bottom {
+				width: 100%;
+				height: calc(100% - 50px);
+				background-color: #CCC;
+			}
+			
+			#href-box3 .left {
+				float: left;
+				height: 100%;
+				width: 100px;
+				background-color: #CCC;
+			}
+			
+			#href-box3 .right {
+				float: right;
+				height: 100%;
+				width: 100px;
+				background-color: #EEE8D5;
+			}
+			
+			.box-col {
+				display: flex;
+				justify-content: space-between;
+				width: 300px;
+				height: 200px;
+				margin: 5px 0 10px 62px;
+				border: 1px solid #CCC;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+			}
+			
+			#href-box4 .parent {
+				width: 300px;
+				background-color: #ccc;
+			}
+			
+			#href-box4 .child {
+				float: left;
+				width: 200px;
+				height: 150px;
+				background-color: orange;
+			}
+			
+			.box {
+				position: relative;
+				width: 300px;
+				height: 200px;
+				margin: 5px 0 10px 62px;
+				border: 1px solid #CCC;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="fix">
+			<a title="返回顶部" href="#top">&#xe606;</a>
+		</div>
+		<div id="all">
+			<!--头部标题部分-->
+			<header id="head">
+				<ol>
+					<li>
+						<span>页面布局</span>
+						<ul class="sec-menu">
+							<li>
+								<a href="#href-box1">盒子在容器中上下左右居中</a>
+							</li>
+							<li>
+								<a href="#href-box2">顶部高度固定余下撑满容器</a>
+							</li>
+							<li>
+								<a href="#href-box3">实现左右两列布局</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<span><a href="#href-box4">清除浮动</a></span>
+					</li>
+				</ol>
+			</header>
+			<div id="container">
+				<!--1、实现盒子上下左右居中如下图所示-->
+				<div id="href-box1">
+					<h1>1、实现盒子上下左右居中如下图所示</h1>
+					<div class="box">
+						<div class="inner-box"></div>
+					</div>
+					<h2>(1)使用绝对定位结合负外边距<span class="red">(子元素宽高已知)</span></h2>
+					<div class="code">
+						<pre>
+<code>
+&lt;div id="box1"&gt;
+  &lt;div class="inner-box"&gt;&lt;/div&gt;
+&lt;/div&gt;						
+</code>
+<code>
+/*样式*/
+#box1 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+#box1 .inner-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -75px;
+  margin-top: -75px;
+  width: 150px;
+  height: 150px;
+  background-color: #F6F6F6;
+}
+</code>
+</pre>
+					</div>
+					<h2>(2)巧用inline-block及vertical-align:middle属性<span class="red">(兼容性最好)</span></h2>
+					<div class="code">
+						<pre>
+<code>
+&lt;div id="box1"&gt;
+  &lt;span&gt;&lt;/span&gt;
+  &lt;div class="inner-box"&gt;&lt;/div&gt;
+&lt;/div&gt;						
+</code>
+<code>
+/*样式*/
+#box1 {
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  text-align:center;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+#box1>span{
+  display: inline-block;
+  height: 100%;
+  vertical-align:middle;
+}
+
+#box1 .inner-box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  background-color: #F6F6F6;
+}						
+</code>
+</pre>
+					</div>
+					<h2>(3)使用绝对定位及CSS3新特性<span class="red">(子元素宽高未知)</span></h2>
+					<div class="code">
+						<pre>
+<code>
+&lt;div id="box1"&gt;
+  &lt;div class="inner-box"&gt;&lt;/div&gt;
+&lt;/div&gt;						
+</code>
+<code>
+/*绝对定位布局方式*/
+#box1 {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+#box1 .inner-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background-color: #F6F6F6;
+}
+
+/*table布局*/			
+#box1 {
+  display: table-cell;
+  width: 300px;
+  height: 300px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px solid #CCC;
+}
+
+#box1 .inner-box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+}
+
+/*弹性盒模型布局*/
+#box1 {
+  display: flex;
+  width: 300px;
+  height: 300px;
+  border: 1px solid blue;
+  justify-content: center;
+  align-items: center;
+}
+
+#box1 .inner-box {
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+}
+
+/*网格布局*/
+#box1 {
+  display: grid;
+  width: 300px;
+  height: 300px;
+  border: 1px solid orange;
+  justify-content: center;
+  align-items: center;
+}
+
+#box1 .inner-box {
+  width: 150px;
+  height: 150px;
+  background-color: pink;
+}
+</code>
+</pre>
+					</div>
+					<h2>(4)使用table布局，比较古老，这里不再展示</h2>
+				</div>
+				<!--2、头部固定高度，其他内容撑满余下部分且不出现滚动条，如图所示-->
+				<div id="href-box2">
+					<h1>2、头部固定高度，其他内容撑满余下部分且不出现滚动条，如图所示</h1>
+					<div class="box">
+						<div class="top">上边部分固定高度50px</div>
+						<div class="bottom">下面部分自动撑满</div>
+					</div>
+					<h2>(1)使用绝对定位的方法</h2>
+					<div class="code">
+						<pre>
+<code>
+&lt;div class="box"&gt;
+  &lt;div class="top"&gt;上边部分固定高度50px&lt;/div&gt;
+  &lt;div class="bottom"&gt;下面部分自动撑满&lt;/div&gt;
+&lt;/div&gt;	
+</code>
+<code>
+.top {
+  width: 100%;
+  height: 50px;
+  background-color: #F6F6F6;
+}
+
+.bottom {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  background-color: #CCC;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+</code>
+					</pre>
+					</div>
+					<h2>(2)使用CSS3的calc()计算属性<span class="red">(运算符两边务必要有空格)</span></h2>
+					<div class="code">
+						<pre>
+<code>
+&lt;div class="box"&gt;
+  &lt;div class="top"&gt;上边部分固定高度50px&lt;/div&gt;
+  &lt;div class="bottom"&gt;下面部分自动撑满&lt;/div&gt;
+&lt;/div&gt;	
+</code>
+<code>
+.top {
+  width: 100%;
+  height: 50px;
+  background-color: #F6F6F6;
+}
+
+.bottom {
+  width: 100%;
+  height: calc(100% - 50px);
+  background-color: #CCC;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+</code>
+					</pre>
+					</div>
+				</div>
+				<!--3、实现左右两列或多列布局-->
+				<div id="href-box3">
+					<h1>3、实现左右两列或多列布局</h1>
+					<div class="box">
+						<div class="left"></div>
+						<div class="right"></div>
+					</div>
+					<h2>(1)使用左右浮动的方法<span class="red">(注意清浮动)</span></h2>
+					<div class="code">
+						<pre>
+<code>
+#href-box3 .left {
+  float: left;
+  height: 100%;
+  width: 100px;
+  background-color: #CCC;
+}
+			
+#href-box3 .right {
+  float: right;
+  height: 100%;
+  width: 100px;
+  background-color: #EEE8D5;
+}
+			
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+</code>
+<code>
+&lt;div class="box"&gt;
+  &lt;div class="left"&gt;&lt;/div&gt;
+  &lt;div class="right"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code>
+						</pre>
+					</div>
+					<h2>(2)使用绝对定位的方法</h2>
+					<div class="code">
+						<pre>
+<code>
+  #href-box3 .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  background-color: #CCC;
+}
+
+#href-box3 .right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  background-color: #EEE8D5;
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+</code>
+<code>
+&lt;div class="box"&gt;
+  &lt;div class="left"&gt;&lt;/div&gt;
+  &lt;div class="right"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code>
+						</pre>
+					</div>
+					<h2>(3)使用flex布局<span class="red">(需要使用高版本浏览器)</span></h2>
+					<div class="code">
+						<pre>
+<code>
+#href-box3 .left {
+  height: 100%;
+  width: 100px;
+  background-color: #CCC;
+}
+
+#href-box3 .right {
+  height: 100%;
+  width: 100px;
+  background-color: #EEE8D5;
+}
+
+.box-col {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 10px 62px;
+  border: 1px solid #CCC;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+</code>
+<code>
+&lt;div class="box"&gt;
+  &lt;div class="left"&gt;&lt;/div&gt;
+  &lt;div class="right"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code>
+						</pre>
+					</div>
+					<h2>(4)使用table布局(比较古老，这里不再展示)</h2>
+				</div>
+				<!--清除浮动常用的方法-->
+				<div id="href-box4">
+					<h1>4、清除浮动的方法<span class="red">(为什么要清浮动？请看图)</span></h1>
+					<div class="box">
+						<div class="parent">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<div class="child"></div>
+						</div>
+					</div>
+					<div class="desc">
+						注意：当元素设置float浮动后，该元素就会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素，
+						浮动元素会造成父元素高度塌陷，所以当我们设置float后，需进行相应的清除浮动操作，清除方法：
+					</div>
+					<h2>(1)给父元素加高度包住子元素</h2>
+					<div class="desc">
+						问题：扩展性不好，在很多情况下，父元素的高度并不知道
+					</div>
+					<h2>(2)让父元素也进行浮动</h2>
+					<div class="desc">
+						问题：页面中所有元素都加浮动，margin左右自动失效（floats bad ！）,设置<span class="red">maring:0 auto;</span>不能使元素左右水平居中
+					</div>
+					<h2>(3)在浮动元素后面添加一个空块级标签，并给空标签添加clear:both样式</h2>
+					<div class="desc">
+						问题：IE6 最小高度 19px；（解决后IE6下还有2px偏差），不要求兼容低版本浏览器可以使用此方法
+					</div>
+					<h2>(4)&lt;br/&gt;清浮动,在浮动元素后面添加&lt;br/&gt;</h2>
+					<div class="desc">
+						问题：不符合工作中：结构、样式、行为，三者分离的要求。
+					</div>
+					<h2>(5)after伪类清浮动方法<span class="red">(比较主流方法)</span>,例如给浮动元素的父级添加一个clear类样式</h2>
+					<div class="code">
+						<pre>
+<code>
+/*
+ after伪类： 元素内部末尾添加内容；
+	:after{content"添加的内容";} IE6，7下不兼容
+ zoom 缩放 
+ 	a、触发 IE下 haslayout，使元素根据自身内容计算宽高。
+	b、FF 不支持
+ */
+.clear:after{
+  content: '';
+  display:block;
+  clear:both;
+}
+.clear{
+  zoom:1;
+}
+</code>
+						</pre>
+					</div>
+				</div>
+				<h2>(6)使用CSS3的flex布局方法，不使用浮动</h2>
+			</div>
+		</div>
+		<script type="text/javascript">
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>原生Ajax方法封装</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<script type="text/javascript" src="../../js/highlight.pack.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../style/highlight/atom-one-dark.css" />
+		<link rel="stylesheet" type="text/css" href="../../style/comtheme.css" />
+		<style type="text/css">
+			#container {
+				margin: 0 auto;
+				padding-top: 10px;
+				width: 100%;
+				background-color: #fff;
+			}
+			
+			#href-box1 .inner-box {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				width: 150px;
+				height: 150px;
+				transform: translate(-50%, -50%);
+				background-color: #CCC;
+			}
+			
+			#container .code {
+				padding: 0 50px;
+			}
+			
+			#href-box2 .top {
+				width: 100%;
+				height: 50px;
+				background-color: #F6F6F6;
+			}
+			
+			#href-box2 .bottom {
+				width: 100%;
+				height: calc(100% - 50px);
+				background-color: #CCC;
+			}
+			
+			.box {
+				position: relative;
+				width: 300px;
+				height: 200px;
+				margin: 5px 0 10px 62px;
+				border: 1px solid #CCC;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="fix">
+			<a title="返回顶部" href="#top">&#xe606;</a>
+		</div>
+		<div id="all">
+			<!--头部标题部分-->
+			<header id="head">
+				<ol>
+					<li>
+						<span><a href="#href-box1">高级拖拽</a></span>
+					</li>
+					<li>
+						<span><a href="#href-box2">右键菜单</a></span>
+					</li>
+					<li>
+						<span>运动框架</span>
+						<ul class="sec-menu">
+							<li>
+								<a href="#">速度版运动框架</a>
+							</li>
+							<li>
+								<a href="#">时间版运动框架</a>
+							</li>
+						</ul>
+					</li>
+				</ol>
+			</header>
+			<div id="container">
+				<!--高级拖拽-->
+				<div id="href-box1">
+					<h1>1、高级拖拽(子元素在父元素内任意拖拽)</h1>
+					<div class="code">
+						<pre>
+<code>
+#div1{
+  width:100px;
+  height:100px;
+  background:red;
+  position:absolute;
+}
+#div2{
+  width:400px;
+  height:300px;
+  background:#CCC;
+  position:relative;
+}
+</code>
+<code>
+&lt;div id="div2"&gt;
+&lt;div id="div1"&gt;&lt;/div&gt;
+</code>
+<code>
+var oDiv=document.getElementById('div1');
+var oDiv2=document.getElementById('div2');
+var disX=0;
+var disY=0;
+oDiv.onmousedown=function(ev)
+{
+  var oEvent=ev||event;
+  disX=oEvent.clientX-oDiv.offsetLeft;
+  disY=oEvent.clientY-oDiv.offsetTop;
+  //div太小，需要把事件添加到document上
+  document.onmousemove=function(ev)
+  {
+    var oEvent=ev||event;
+    var l=oEvent.clientX-disX;
+    var t=oEvent.clientY-disY;
+    if(l<0)
+    {
+      l=0;
+    }
+    else if(l>oDiv2.offsetWidth-oDiv.offsetWidth)
+    {
+      l=oDiv2.offsetWidth-oDiv.offsetWidth;
+    }
+    if(t<0)
+    {
+      t=0;
+    }
+    //计算可视区的高度减去oDiv的宽度，即为当前div的左边距
+    else if(t>oDiv2.offsetHeight-oDiv.offsetHeight)
+    {
+      t=oDiv2.offsetHeight-oDiv.offsetHeight
+    }
+    oDiv.style.left=l+'px';
+    oDiv.style.top=t+'px';
+  };
+  document.onmouseup=function()
+  {
+    document.onmousemove=null;
+    document.onmouseup=null;
+  };
+  //在firefox下会出现bug,解决方法
+  return false;
+};
+</code>
+						</pre>
+					</div>
+				</div>
+				<!--右键菜单-->
+				<div id="href-box2">
+					<h1>2、简易右键菜单</h1>
+					<div class="code">
+						<pre>
+<code>
+*{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#div1{
+  position:absolute;
+  width:80px;
+  background:#CCC;
+  border:1px solid black;
+  display:none;
+}
+</code>
+<code>
+&lt;div id="div1"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;aaa&lt;/li&gt;
+    &lt;li&gt;bbb&lt;/li&gt;
+    &lt;li&gt;ccc&lt;/li&gt;
+    &lt;li&gt;ddd&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code>
+<code>
+document.oncontextmenu=function(ev)
+{
+  var oEvent=ev||event;
+  var oDiv=document.getElementById('div1');
+  oDiv.style.display='block';
+  oDiv.style.left=oEvent.clientX+'px';
+  oDiv.style.top=oEvent.clientY+'px';
+  return false;
+}
+
+document.onclick=function()
+{
+  var oDiv=document.getElementById('div1');
+  oDiv.style.display='none';
+}
+</code>
+						</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+
+</html>

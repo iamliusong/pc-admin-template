@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+		<link rel="stylesheet" href="./css/login.css" />
+		<title>登录页</title>
+	</head>
+	<body>
+		<div class="header-box">用户登录</div>
+		<div class="help-box">
+			<span onclick="showShade()">帮助</span>
+		</div>
+		<div class="head-icon">
+			<img src="./img/headpic.jpg"/>
+		</div>
+		<div class="login-box">
+			<form class="login-form">
+				<div class="login-input-box">
+					<label>&#xe697;</label>
+					<input id="username" class="login-user-input" type="input" placeholder="请输入用户名" onkeyup="showUserClose()">
+					<span id="user-clear-btn" class="login-input-clear" onclick="clearUsername()">✖</span>
+				</div>
+				<div class="login-input-box">
+					<label id="pass-icon" onclick="showOrHidePass()">&#xe669;</label>
+					<input id="password" class="login-pass-input" type="password" placeholder="请输入密码" onkeyup="showPassClose()">
+					<span id="pass-clear-btn" class="login-input-clear"  onclick="clearPass()">✖</span>
+				</div>
+				<div class="login-tools"></div>
+				<div class="login-btn" id="login-btn">登录</div>
+			</form>
+		</div>
+		<div class="other-login">
+			<p onclick="changeLogin()">忘记密码？</p>
+			<p onclick="register()">注册</p>
+		</div>
+		<div class="footer-box">
+			版权所有，仿冒必究，仅供学习交流使用<br/>作者：刘松，完成时间：2019-07-14
+		</div>
+		<div class="shade-box" id="shade-box">
+			<div class="shade-tips">
+				<p>
+					<span>初次登录请先注册</span><br/>
+					<span>已有账号可直接登录</span><br/>
+					<span>使用手机号可找回密码</span>
+				</p>
+				<hr/>
+				<div class="shade-confim"  onclick="hideShade()">确定</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./js/login.js" ></script>
+	</body>
+</html>
